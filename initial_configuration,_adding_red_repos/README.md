@@ -1,4 +1,4 @@
-# Initial Configuration, adding Red Repos
+# Initial Configuration, adding Red Hat Repos
 
 The follwoing sections will cover adding different repositories (or repos) to the Satellite server, starting with the official Red Hat repos
 

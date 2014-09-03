@@ -7,7 +7,7 @@
    * [Attach Entitlements](installation/attach_entitlements.md)
    * [Installation](installation/installation.md)
    * [Initial Setup](installation/initial_setup.md)
-* [Initial Configuration, adding Red Repos](initial_configuration,_adding_red_repos/README.md)
+* [Initial Configuration, adding Red Hat Repos](initial_configuration,_adding_red_repos/README.md)
    * [Creating the Manifest](initial_configuration,_adding_red_repos/creating_the_manifest.md)
    * [Quick Introduction to Hammer](initial_configuration,_adding_red_repos/quick_introduction_to_hammer.md)
    * [Hammer Credentials](initial_configuration,_adding_red_repos/hammer_credentials.md)
