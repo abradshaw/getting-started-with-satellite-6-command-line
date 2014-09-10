@@ -69,7 +69,7 @@ subscription-manager repos --disable "*"
 
 subscription-manager repos --enable rhel-6-server-rpms \
 --enable rhel-server-rhscl-6-rpms \
---enable rhel-server-6-satellite-6-beta-rpms
+--enable rhel-6-server-satellite-6.0-rpms
 ```
 
 Once done, check that you have access to **exactly** three repos
