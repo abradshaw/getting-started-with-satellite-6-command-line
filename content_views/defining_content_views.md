@@ -11,7 +11,7 @@ hammer repository list --organization "Example Org"
 ID | NAME                                                            | CONTENT TYPE
 ---|-----------------------------------------------------------------|-----------
 1  | Red Hat Enterprise Linux 6 Server Kickstart x86_64 6Server      | yum
-3  | Red Hat Enterprise Linux 6 Server - RH Common Beta RPMs x86_64  | yum
+3  | Red Hat Enterprise Linux 6 Server - RH Common RPMs x86_64       | yum
 2  | Red Hat Enterprise Linux 6 Server RPMs x86_64 6Server           | yum
 ---|-----------------------------------------------------------------|-----------
 
