@@ -16,19 +16,14 @@ OK, lets get a list of whats availble to you, you are specifically looking for t
 Search for the Satellite Subscription, as a Red Hat employee, some of the output I see is as follows, yours will look a little different
 
 ```
-Subscription Name: Red Hat Satellite Employee Subscription
-Provides:          Red Hat Beta
-                   Red Hat Satellite Tools 6 MDP
-                   Red Hat Satellite 6 MDP
-                   Red Hat Satellite Capsule 6 Beta
-                   Red Hat Enterprise Linux 7 Release Candidate
-                   Red Hat Satellite 6 Beta
-                   Red Hat Enterprise Linux High Availability (for RHEL Server)
-                   Red Hat Enterprise Linux Server
+Subscription Name: Red Hat Satellite Subscription
+Provides:          Red Hat Software Collections (for RHEL Server)
+                   Red Hat Satellite Capsule
                    Red Hat Satellite
-                   Red Hat Enterprise Linux Load Balancer (for RHEL Server)
-SKU:               SER0232US
-Pool ID:           8a85f9873f77744e013f8944aab067cf
+                   ....
+
+SKU:               SER---US
+Pool ID:           aaaabbbbccccddddeeeeffffgggghhh
 Available:         17
 Suggested:         1
 Service Level:     Self-Support
@@ -43,7 +38,7 @@ the **Pool ID** of the subscription
 
 You can **attach** this to your server as follows
 
-```subscription-manager attach --pool=8a85f9873f77744e013f8944aab067cf```
+```subscription-manager attach --pool=aaaabbbbccccddddeeeeffffgggghhh```
 
 <div class=warn>**NOTE**:
 If you get an error that reads like this
@@ -78,10 +73,10 @@ Once done, check that you have access to **exactly** three repos
 # yum repolist
 ...
 
-repo id                                 repo name                                                              status
-rhel-6-server-rpms                      Red Hat Enterprise Linux 6 Server (RPMs)                               12,833
-rhel-server-6-satellite-6-beta-rpms     Red Hat Satellite 6.0 Beta (for RHEL 6 Server) (RPMs)                     334
-rhel-server-rhscl-6-rpms                Red Hat Software Collections RPMs for Red Hat Enterprise Linux 6 Server 1,267
+rhel-6-server-rpms                  Red Hat Enterprise Linux 6 Server (RPMs)                               12,913
+rhel-6-server-satellite-6.0-rpms    Red Hat Satellite 6.0 (for RHEL 6 Server) (RPMs)                          345
+rhel-server-rhscl-6-rpms            Red Hat Software Collections RPMs for Red Hat Enterprise Linux 6 Server 1,269
 ```
 
-Once you have confirmed that you have access to eactly those three repositories, carry on to the next part
+Once you have confirmed that you have access to exactly those three repositories, carry on to the next part.
+

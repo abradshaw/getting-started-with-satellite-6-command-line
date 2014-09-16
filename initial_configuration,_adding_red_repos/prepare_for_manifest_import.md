@@ -4,6 +4,8 @@ Once the manifest has been created, we simple need to import it into our Satelli
 
 However, first we must create our **Organization** and **Location**
 
+###Organisation
+
 The oganisation that I shall use for this book is **Example Org** and the location I shall use is **Europe**
 
 Lets get our orgainisation created, starting off with getting some help on the syntax
@@ -28,6 +30,7 @@ hammer organization create  --name "Example Org"
 Organization created
 
 ```
+###Location
 
 Now the location
 

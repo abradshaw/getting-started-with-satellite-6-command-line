@@ -28,7 +28,7 @@ To get us started we shall only enable three Red Hat repositories - these are en
 
 # hammer repository-set enable  --organization "Example Org" \
 --product "Red Hat Enterprise Linux Server" \
---name "Red Hat Enterprise Linux 6 Server - RH Common Beta (RPMs)" \
+--name "Red Hat Enterprise Linux 6 Server - RH Common (RPMs)" \
 --basearch "x86_64"
 ```
 

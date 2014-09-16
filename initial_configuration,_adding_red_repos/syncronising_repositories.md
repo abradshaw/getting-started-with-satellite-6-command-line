@@ -34,8 +34,8 @@ ID | NAME                                                           | CONTENT TY
 12 | Puppet Repo 1                                                  | puppet
 5  | Red Hat Enterprise Linux 6 Server Kickstart x86_64 6.5         | yum
 1  | Red Hat Enterprise Linux 6 Server Kickstart x86_64 6.5         | yum
-7  | Red Hat Enterprise Linux 6 Server - RH Common Beta RPMs x86_64 | yum
-3  | Red Hat Enterprise Linux 6 Server - RH Common Beta RPMs x86_64 | yum
+7  | Red Hat Enterprise Linux 6 Server - RH Common RPMs x86_64      | yum
+3  | Red Hat Enterprise Linux 6 Server - RH Common RPMs x86_64      | yum
 2  | Red Hat Enterprise Linux 6 Server RPMs x86_64 6.5              | yum
 11 | Red Hat Enterprise Linux 6 Server RPMs x86_64 6.5              | yum
 ```

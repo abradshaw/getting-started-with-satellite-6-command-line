@@ -6,7 +6,7 @@ From a command prompt type the following
 
 `subscription-manager register --type=satellite`
 
-You will then be prompted for your credentials, enter them and the the system should be correctly registerd, but not attached/consuming entitlements
+You will then be prompted for your credentials, enter them and the system should be correctly registered, but not attached/consuming entitlements
 
 At this point its important to logon to the Red Hat Customer Portal and set the version of Satellite to 6.0
 
