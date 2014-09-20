@@ -28,5 +28,5 @@
    * [Provisioning Templates](configure_the_server_for_provisioning/provisioning_templates.md)
    * [Operating Systems](configure_the_server_for_provisioning/operating_systems.md)
 * [Host Groups](host_groups/README.md)
-   * [Defining Host Groups](host_groups/defining_host_groups)
+   * [Defining Host Groups](host_groups/defining_host_groups.md)
 
