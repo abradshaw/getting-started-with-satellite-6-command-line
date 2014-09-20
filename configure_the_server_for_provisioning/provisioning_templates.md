@@ -16,7 +16,7 @@ This is a nice last minute change (from the beta) as editing one template no lon
 If you want to change one of them, then you will need to clone it
 
 <div class=warn>**NOTE**:
-At the time of writing (just after GA, hammer still had not been updated to include this functionality. If you need to clone a template, you will need to use the UI
+At the time of writing (just after GA, hammer still had not been updated to include this clone functionality. If you need to clone a template, you will need to use the UI
 </div>
 
 You can get a list of **Provisioning Templates** by doing the following (note that this command produces paged output by defualt, so Ive used the **--per-page 9999** option)
@@ -70,3 +70,58 @@ ID | NAME                                | TYPE
 
 The two that we require for provisioning are **Kickstart default PXELinux** and **Satellite Kickstart Default**. The later brings in the **subscription_manager_registration** snippet also
 
+Lets stick with the builtin provisioning template. Lets see what we need to do.
+
+```
+hammer template info --id 31
+Id:                31
+Name:              Satellite Kickstart Default
+Type:              provision
+Operating systems:
+
+Locations:
+    Default_Location
+    Europe
+Organizations:
+    Default_Organization
+    Example Org
+
+```
+
+OK we only need to make sure that it is associated with the **operating system** then. We can only specify the operating system by ID and not name, so lets get the ID
+
+```
+ hammer os list
+---|------------|--------------|-------
+ID | FULL NAME  | RELEASE NAME | FAMILY
+---|------------|--------------|-------
+1  | RedHat 6.5 |              | Redhat
+---|------------|--------------|-------
+```
+
+So all we **should** need to do is
+
+```
+hammer template update --id 33 --operatingsystem-ids 1
+Could not update the config template:
+  This template is locked. Please clone it to a new template to customize.
+```
+
+So it seems that the GA release (6.0.4) version has a bug, and so we need to work around this like so
+
+```
+hammer os add-config-template --id 1 --config-template-id 33
+
+hammer template info --id 33
+Id:                33
+Name:              Satellite Kickstart Default
+Type:              provision
+Operating systems:
+    RedHat 6.5
+Locations:
+    Default_Location
+    Europe
+Organizations:
+    Default_Organization
+    Example Org
+```
