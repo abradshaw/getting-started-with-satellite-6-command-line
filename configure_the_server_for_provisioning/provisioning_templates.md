@@ -102,7 +102,7 @@ ID | FULL NAME  | RELEASE NAME | FAMILY
 So all we **should** need to do is
 
 ```
-hammer template update --id 33 --operatingsystem-ids 1
+hammer template update --id 31 --operatingsystem-ids 1
 Could not update the config template:
   This template is locked. Please clone it to a new template to customize.
 ```
@@ -110,9 +110,9 @@ Could not update the config template:
 So it seems that the GA release (6.0.4) version has a bug, and so we need to work around this like so
 
 ```
-hammer os add-config-template --id 1 --config-template-id 33
+hammer os add-config-template --id 1 --config-template-id 31
 
-hammer template info --id 33
+hammer template info --id 31
 Id:                33
 Name:              Satellite Kickstart Default
 Type:              provision
