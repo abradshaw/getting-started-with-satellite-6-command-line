@@ -34,3 +34,5 @@ Subcommands:
 Options:
     -h, --help                    print help
 ```
+
+Further discussion of **capsules** I shall save for the next book.

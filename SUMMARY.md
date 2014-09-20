@@ -9,8 +9,8 @@
    * [Initial Setup](installation/initial_setup.md)
 * [Initial Configuration, adding Red Hat Repos](initial_configuration,_adding_red_repos/README.md)
    * [Creating the Manifest](initial_configuration,_adding_red_repos/creating_the_manifest.md)
-   * [Quick Introduction to Hammer](initial_configuration,_adding_red_repos/quick_introduction_to_hammer.md)
    * [Hammer Credentials](initial_configuration,_adding_red_repos/hammer_credentials.md)
+   * [Quick Introduction to Hammer](initial_configuration,_adding_red_repos/quick_introduction_to_hammer.md)
    * [Prepare for Manifest Import](initial_configuration,_adding_red_repos/prepare_for_manifest_import.md)
    * [Importing the Manifest](initial_configuration,_adding_red_repos/importing_the_manifest.md)
    * [Adding Red Hat Repositories](initial_configuration,_adding_red_repos/adding_red_hat_repositories.md)
@@ -26,7 +26,7 @@
    * [Partition Tables](configure_the_server_for_provisioning/partition_tables.md)
    * [Subnets](configure_the_server_for_provisioning/subnets.md)
    * [Provisioning Templates](configure_the_server_for_provisioning/provisioning_templates.md)
-   * [Operating Systems](configure_the_server_for_provisioning/operating_systems)
+   * [Operating Systems](configure_the_server_for_provisioning/operating_systems.md)
 * [Host Groups](host_groups/README.md)
    * [Defining Host Groups](host_groups/defining_host_groups)
 

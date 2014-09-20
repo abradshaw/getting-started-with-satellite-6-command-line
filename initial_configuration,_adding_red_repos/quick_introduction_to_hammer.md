@@ -2,7 +2,8 @@
 
 The command line tool that is shipped with Satellite 6 is called Hammer
 
-To get started you can examime which commands Hammer is capable of with
+
+You can examime which commands Hammer is capable of with
 
 ```hammer --help```
 
