@@ -50,6 +50,35 @@ hammer location add-hostgroup --name "Europe" --hostgroup "DC North"
 
 hammer organization add-hostgroup --name "Example Org" --hostgroup "DC North"
 ```
+Lets see what we have
+
+```
+hammer hostgroup info --name "DC North"
+Id:                     1
+Name:                   DC North
+Label:
+Operating System:       RHEL Server 6.5
+Environment:            KT_Example_Org_Library_RHEL65_Content_View_1_5
+Model:
+Ancestry:
+Subnet:                 172.16.30.0/24
+Domain:                 abcloud.pw
+Architecture:           x86_64
+Partition Table:        Kickstart default
+Medium:                 Example_Org/Library/Red_Hat_6_Server_Kickstart_x86_64_6_5
+Puppet CA Proxy Id:     1
+Puppet Master Proxy Id: 1
+ComputeProfile:
+Puppetclasses:
+
+Parameters:
+
+Locations:
+    Europe
+Organizations:
+    Example Org
+```
+
 
 Things missing at this point
 
@@ -57,3 +86,34 @@ Things missing at this point
 * Password
 * Activation Key
 
+The activation key we can use **set-parameter** to set
+
+```
+hammer hostgroup set-parameter --hostgroup "DC North" \
+--name "kt_activation_keys"  --value "RHEL65-Activation-Key-1"
+```
+
+That only really leaves "Content Source", but hammer doesnt seem to have a way to set this. Setting it from the UI shows three more params
+
+```
+    kt_cv => RHEL65-Content_View-1
+    kt_env => Library
+    kt_org => Example_Org
+```
+
+But setting those manually...
+
+```
+hammer hostgroup set-parameter --hostgroup "DC North"\
+--name "kt_env" --value "Library"
+
+hammer hostgroup set-parameter --hostgroup "DC North"\
+--name "kt_cv"  --value "RHEL65-Content_View-1"
+
+hammer hostgroup set-parameter --hostgroup "DC North"\
+--name "kt_org"  --value "Example_Org"
+```
+
+...still doesnt set the UI element :-/
+
+TBC
