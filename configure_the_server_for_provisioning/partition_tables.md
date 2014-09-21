@@ -1,6 +1,6 @@
 # Partition Tables
 
-Check that your **Partition Table* is associated with your **Operating System**. This should have been done during the initial configuration, but when you create your own, custom ones, dont forget this step
+Check that your **Partition Table** is associated with your **Operating System**. This should have been done during the initial configuration, but when you create your own, custom ones, dont forget this step
 
 ```
 hammer partition-table list
