@@ -10,7 +10,7 @@ Before we start, you need
 
 ### Firewall configuration
 
-Its worth getting the firewall configured at this stage, so that we dont forget later. I shall assume a defualt firewall config exists. Configure the firewall any way you feel confortable, there is a quick option below.
+Its worth getting the firewall configured at this stage, so that we dont forget later. I shall assume a default firewall config exists. Configure the firewall any way you feel confortable, there is a quick option below.
 
 
 ```
