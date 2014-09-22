@@ -21,6 +21,12 @@ iptables -I INPUT -m state --state NEW -p tcp --dport 80 -j ACCEPT
 iptables -I INPUT -m state --state NEW -p tcp --dport 8140 -j ACCEPT
 iptables -I INPUT -m state --state NEW -p tcp --dport 9090 -j ACCEPT
 iptables -I INPUT -m state --state NEW -p tcp --dport 22 -j ACCEPT
+# And for the Capsule services
+iptables -I INPUT -m state --state NEW -p tcp --dport 53 -j ACCEPT
+iptables -I INPUT -m state --state NEW -p udp --dport 53 -j ACCEPT
+iptables -I INPUT -m state --state NEW -p udp --dport 67 -j ACCEPT
+iptables -I INPUT -m state --state NEW -p udp --dport 68 -j ACCEPT
+iptables -I INPUT -m state --state NEW -p udp --dport 69 -j ACCEPT
 service iptables save
 ```
 
