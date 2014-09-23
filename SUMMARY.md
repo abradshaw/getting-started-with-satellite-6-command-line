@@ -29,4 +29,10 @@
    * [Operating Systems](configure_the_server_for_provisioning/operating_systems.md)
 * [Host Groups](host_groups/README.md)
    * [Defining Host Groups](host_groups/defining_host_groups.md)
+* [Host Creation](host_creation/README)
+* [Troubleshooting](troubleshooting/README.md)
+   * [Locations and Organisations](troubleshooting/locations_and_organisations.md)
+   * [Capsules / Proxies](troubleshooting/capsules__proxies)
+   * [Tasks](troubleshooting/tasks.md)
+* [Next Steps](next_steps/README.md)
 
