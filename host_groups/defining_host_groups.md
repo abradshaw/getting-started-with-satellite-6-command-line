@@ -114,6 +114,6 @@ hammer hostgroup set-parameter --hostgroup "DC North"\
 --name "kt_org"  --value "Example_Org"
 ```
 
-...still doesnt set the UI element :-/
+...still doesnt set the UI element :-/ It turns out that this functionality isnt yet in Hammer. This bug tracks the issue [Bug #7597: Hammer cant set "Content Source"](http://projects.theforeman.org/issues/7597)
 
 TBC
