@@ -1,8 +1,8 @@
-# Syncronising Repositories
+# Synchronising Repositories
 
-Before we can create hosts to be provisioned, we need to syncronise the repositories that we selected in the previous section. This may take time, depending on the speed of your internet connection
+Before we can create hosts to be provisioned, we need to synchronise the repositories that we selected in the previous section. This may take time, depending on the speed of your internet connection
 
-Repository syncronisation is perfromed with
+Repository synchronisation is perfromed with
 
 ```hammer repository synchronize```
 
@@ -40,7 +40,7 @@ ID | NAME                                                           | CONTENT TY
 11 | Red Hat Enterprise Linux 6 Server RPMs x86_64 6.5              | yum
 ```
 
-As a general rule, you should use the lowest ID for each duplicate and then you can syncronise via ID
+As a general rule, you should use the lowest ID for each duplicate and then you can synchronise via ID
 
 ```hammer repository synchronize --id 6 --organization "Example Org" ```
 

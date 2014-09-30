@@ -6,7 +6,7 @@ The idea is that your hosts or clients will exist in one of these tiers. A **Con
 
 We will discuss **Content Views** in more detail in a later section
 
-For now lets go ahead and create the four **Lifecycle Environments** mentions above
+For now lets go ahead and create the four **Lifecycle Environments** mentioned above
 
 
 ```

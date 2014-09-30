@@ -1,6 +1,6 @@
 # Capsules / Smart Proxies
 
-Satellite 6 has the concept of **Capsules** which are anagalous to **Smart Proxies** in [Foreman](http://theforeman.org)
+Satellite 6 has the concept of **Capsules** which are analagous to **Smart Proxies** in [Foreman](http://theforeman.org)
 
 A **Capsule** provides functionality to the Satellite server.
 Examples of **Capsules** are

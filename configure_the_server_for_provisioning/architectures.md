@@ -13,4 +13,4 @@ ID | NAME
 
 ```
 
-As **architechtures** dont cant be allocated to a **location** or **organisation** there is nothing to do here other than verify that the configure script created them
+As **architectures** dont cant be allocated to a **location** or **organisation** there is nothing to do here other than verify that the configure script created them

@@ -14,7 +14,7 @@ or simple edit **/etc/hammer/cli.modules.d/foreman.yml**
 	:password: '<password>'
 ```
 
-Personally I find the second option much more convienient, so I shall assume you have do this for all further examples
+Personally I find the second option much more convenient,ne so I shall assume you have done this for all further examples
 
 With the release of GA, the setup program was changed to randomise this password. The password is dumped to the screen, once the **katello-installer** has finished.
 

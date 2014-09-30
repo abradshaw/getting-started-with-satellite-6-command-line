@@ -98,7 +98,7 @@ Options:
     ```
 ----
 
-If your subnet isnt even created, then we shall have to do it manually, lets get some help
+If your subnet isn't even created, then we shall have to do it manually, lets get some help
 
 ```
 hammer subnet create --help

@@ -12,7 +12,7 @@ ID | NAME
 
 ```
 
-Domains can and indeed should be part of your  **location** and **organisation**, so we shall probably have to move the it. We can do this with
+Domains can and indeed should be part of your  **location** and **organisation**, so we shall probably have to move it. We can do this with
 
 ```
 hammer location add-domain --domain "example.com" --name "Europe"
