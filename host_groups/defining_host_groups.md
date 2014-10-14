@@ -1,3 +1,12 @@
+<style>
+div.warn {
+    background-color: #fcf2f2;
+    border-color: #dFb5b4;
+    border-left: 5px solid #dfb5b4;
+    padding: 0.5em;
+    }
+</style>
+
 # Defining Host Groups
 
 Host groups take lots of settings
@@ -80,7 +89,7 @@ Organizations:
 ```
 
 
-Things missing at this point
+Things missing at this point (not necessarilyvisible from the hammer output above, but from the UI)
 
 * Content Source
 * Password
@@ -116,4 +125,15 @@ hammer hostgroup set-parameter --hostgroup "DC North"\
 
 ...still doesnt set the UI element :-/ It turns out that this functionality isnt yet in Hammer. This bug tracks the issue [Bug #7597: Hammer cant set "Content Source"](http://projects.theforeman.org/issues/7597)
 
-TBC
+<div class=warn>**Note:** I was holding back on publishing the book until this was resolved but now I have decided to go ahead and show the work around. Its a shame as its the **only** thing we actually need the UI for.
+</div>
+
+#### Workaround
+
+To change this, go to the web UI and select **Host Groups** under **configure**. Click on the **Host Group** you want to edit, and select the entry in the drop down for **Content Source** which you can see is blank in the screen shot below
+
+![](../images/set-content-source.png)
+
+We now have our **Host Group** configured and are ready to create our first host to be provisioned.
+
+
