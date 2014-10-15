@@ -1,59 +1,81 @@
+<style>
+div.warn {
+    background-color: #fcf2f2;
+    border-color: #dFb5b4;
+    border-left: 5px solid #dfb5b4;
+    padding: 0.5em;
+    }
+</style>
+
 # Host Creation
 
-OK so we are finally ready to create our first host to be provisioned. A quick look at the options and we can make our first attempt
+<div class=warn>**Note:** Currently there is no way of creating a new host from hammer, which is dissapointing. I have opened this [bug](https://bugzilla.redhat.com/show_bug.cgi?id=1153034)
 
-```
-hammer host create --help| less
-Usage:
-    hammer host create [OPTIONS]
+As with **host group** creation, I will add the work around (using the web UI) until the bug is fixed. Sorry
+</div>
 
-Options:
-    --architecture ARCHITECTURE_NAME Architecture name
-    --architecture-id ARCHITECTURE_ID
-    --ask-root-password ASK_ROOT_PW One of true/false, yes/no, 1/0.
-    --build BUILD                 One of true/false, yes/no, 1/0.
-                                  Default: "true"
-    --compute-attributes COMPUTE_ATTRS Compute resource attributes.
-                                  Comma-separated list of key=value.
-    --compute-profile COMPUTE_PROFILE_NAME Name to search by
-    --compute-profile-id COMPUTE_PROFILE_ID
-    --compute-resource COMPUTE_RESOURCE_NAME Compute resource name
-    --compute-resource-id COMPUTE_RESOURCE
-    --domain DOMAIN_NAME          Domain name
-    --domain-id DOMAIN_ID
-    --enabled ENABLED             One of true/false, yes/no, 1/0.
-                                  Default: "true"
-    --environment ENVIRONMENT_NAME Environment name
-    --environment-id ENVIRONMENT_ID
-    --hostgroup HOSTGROUP_NAME    Hostgroup name
-    --hostgroup-id HOSTGROUP_ID
-    --image-id IMAGE_ID
-    --interface INTERFACE         Interface parameters.
-                                  Comma-separated list of key=value.
-                                  Can be specified multiple times.
-    --ip IP                       not required if using a subnet with dhcp proxy
-    --mac MAC                     not required if its a virtual machine
-```
-
-So lets give it a try
+The below solution is taken directly from the  [sister book](http://gsw-satellite6.documentation.rocks/)
 
 
-```
-hammer host create --hostgroup "DC North"  --name "test"
-Could not create the host:
-  MAC address is invalid
-  MAC address can't be blank
-```
+----
+From the web UI, go to
 
-Right so we certainly need to set the MAC address, lets also set the domain
+```Hosts > New Host```
 
-```
-hammer host create --hostgroup "DC North"  --name "test" --mac "aa:bb:cc:dd:ee:ff"  --domain "example.com"
-Host created
+Enter the hostname (without the domain name) of your new host. The **Organisation** and **Location** fields should be correct already. Select the **Host Group** from the dropdown, most other entries will now auto populate, with the exception of **Content Source**. Select the **Content Source**
 
-```
+![](../images/host-newhost-1.png)
 
-OK, looks good but we havent specified a **location** or **organisation** as it seems its not possible at creation timeor indeed after, I have opened this [bug](https://bugzilla.redhat.com/show_bug.cgi?id=1153034)
+Now over on the **Network** tab, check that the **Domain** is correct (leave **Realm** empty) and paste in the MAC address of the host you are provisioning. (check that IP is auto suggetsed - if not see troubleshooting section)
+
+Verify that, on the Operating System Tab, that **Architecture**, **Operating system**, **Media** and **Partition table** are set and hit **Submit**
+
+After a few seconds a screen like this should appear
+
+![](../images/host-newhost-2.png)
+
+Now power on the host to be provisioned.
+
+The build should progress in these distint stages
+
+The initial Amaconda package install stage
+
+![](../images/host-stage-anaconda.png)
+
+Next the post section will run, switching you to VT3 so that you can follow.
+
+First it will register, via **subscription-manager**, to the Satellite
+
+![](../images/host-stage-registered.png)
+
+Next it will install the katello-agent
+
+![](../images/host-stage-katelloagent.png)
+
+This will be followed by a ```yum update```
+
+![](../images/host-stage-update.png)
+
+After the full update, the final install will happen, it will install **puppet**
+
+![](../images/host-stage-install-puppet.png)
+
+Finally, once puppet installs, it will configure puppet and inform the Satellite server that it is built
+
+![](../images/host-stage-completed.png)
+
+Back on the Satellite Server, under ```Hosts > All Hosts```
+, you will see the new host initally has a blue A (Active) next to it. This simply means that puppet has made changes during its initial run. It will change to a green O (no changes) next time puppet runs -in about 30 mins time.
+
+![](../images/hosts-allhosts.png)
+
+Also on the Satellite Server, check the status of the **Content Hosts** ```Hosts > Content Hosts```
+
+![](../images/hosts-contenthost-1.png)
+
+Click on the **Content Host** to see more details
+
+![](../images/hosts-contenthost-2.png)
 
 
 

@@ -125,7 +125,7 @@ hammer hostgroup set-parameter --hostgroup "DC North"\
 
 ...still doesnt set the UI element :-/ It turns out that this functionality isnt yet in Hammer. This bug tracks the issue [Bug #7597: Hammer cant set "Content Source"](http://projects.theforeman.org/issues/7597)
 
-<div class=warn>**Note:** I was holding back on publishing the book until this was resolved but now I have decided to go ahead and show the work around. Its a shame as its the **only** thing we actually need the UI for.
+<div class=warn>**Note:** I was holding back on publishing the book until this was resolved but now I have decided to go ahead and show the work around, I shall update the book once this is fixed
 </div>
 
 #### Workaround
