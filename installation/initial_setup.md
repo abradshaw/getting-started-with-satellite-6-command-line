@@ -16,7 +16,7 @@ Note: forwarders are stored in ```/etc/named/options.conf``` should you wish to 
 
 A full list of other katello-setup options are available via
 ```
-katello installer --help
+katello-installer --help
 ```
 
 Once the installer has finished, you should be able to login by pointing your browser to ```https://<servername>``` (assuming you have made the necessary firewall changes).
