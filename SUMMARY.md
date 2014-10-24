@@ -32,7 +32,6 @@
 * [Host Creation](host_creation/README.md)
 * [Troubleshooting](troubleshooting/README.md)
    * [Locations and Organisations](troubleshooting/locations_and_organisations.md)
-   * [Capsules / Proxies](troubleshooting/capsules__proxies)
    * [Tasks](troubleshooting/tasks.md)
 * [Next Steps](next_steps/README.md)
 
