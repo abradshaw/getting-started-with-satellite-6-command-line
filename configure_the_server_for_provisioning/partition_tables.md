@@ -33,3 +33,5 @@ Created at:        2014/09/11 18:41:32
 Updated at:        2014/09/11 18:41:32
 
 ```
+We will fix this later but just FYI, you would use ```hammer os  add-ptable --id 1 --ptable-id 7``` but as I say we will do it later
+
