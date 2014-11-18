@@ -20,7 +20,7 @@ hammer lifecycle-environment create --name "Development" \
 
 hammer lifecycle-environment create --name "QA" \
 --description "QA testing for the App guys" \
---organization "hilti" --prior "Development
+--organization "Example Org" --prior "Development"
 
 hammer lifecycle-environment create --name "Production" \
 --description "Production Environment" \
