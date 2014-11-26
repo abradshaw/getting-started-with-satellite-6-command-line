@@ -8,13 +8,12 @@ div.warn {
  </style>
 
 # Getting Started with Satellite 6 Command Line
-<div class=warn>**NOTE**:
+>**NOTE**:
 This book is UNFINISHED - I was waiting for a bug with hostgroup creation to be fixed, but then I found that also host creation doesnt work via hammer either.
 
-Ive decided to release the book anyway, I still think it has useful infromation in it
+>Ive decided to release the book anyway, I still think it has useful infromation in it
 
-I shall update the book, once the final bugs are resolved
-</div>
+>I shall update the book, once the final bugs are resolved
 
 ----
 In this, the second book in the series, we look at using Satellite 6's command line tool, called Hammer
