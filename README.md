@@ -1,12 +1,3 @@
-<style>
-div.warn {
-    background-color: #fcf2f2;
-    border-color: #dFb5b4;
-    border-left: 5px solid #dfb5b4;
-    padding: 0.5em;
-    }
- </style>
-
 # Getting Started with Satellite 6 Command Line
 >**NOTE**:
 This book is UNFINISHED - I was waiting for a bug with hostgroup creation to be fixed, but then I found that also host creation doesnt work via hammer either.
