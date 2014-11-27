@@ -1,18 +1,8 @@
-<style>
-div.warn {
-    background-color: #fcf2f2;
-    border-color: #dFb5b4;
-    border-left: 5px solid #dfb5b4;
-    padding: 0.5em;
-    }
-</style>
-
 # Host Creation
 
-<div class=warn>**Note:** Currently there is no way of creating a new host from hammer, which is dissapointing. I have opened this [bug](https://bugzilla.redhat.com/show_bug.cgi?id=1153034)
+>**Note:** Currently there is no way of creating a new host from hammer, which is dissapointing. I have opened this [bug](https://bugzilla.redhat.com/show_bug.cgi?id=1153034)
 
-As with **host group** creation, I will add the work around (using the web UI) until the bug is fixed. Sorry
-</div>
+>As with **host group** creation, I will add the work around (using the web UI) until the bug is fixed. Sorry
 
 The below solution is taken directly from the  [sister book](http://gsw-satellite6.documentation.rocks/)
 

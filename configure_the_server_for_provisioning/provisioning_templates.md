@@ -1,12 +1,3 @@
-<style>
-div.warn {
-    background-color: #fcf2f2;
-    border-color: #dFb5b4;
-    border-left: 5px solid #dfb5b4;
-    padding: 0.5em;
-    }
-</style>
-
 # Provisioning Templates
 
 One of the changes from the beta version is that now, copies of provisioning templates are copied to your location and organisation, but they are read only copies.
@@ -15,9 +6,8 @@ This is a nice last minute change (from the beta) as editing one template no lon
 
 If you want to change one of them, then you will need to clone it
 
-<div class=warn>**NOTE**:
+>**NOTE**:
 At the time of writing (just after GA, hammer still had not been updated to include this clone functionality. If you need to clone a template, you will need to use the UI
-</div>
 
 You can get a list of **Provisioning Templates** by doing the following (note that this command produces paged output by defualt, so Ive used the **--per-page 9999** option)
 
