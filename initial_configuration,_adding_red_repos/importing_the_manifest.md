@@ -1,12 +1,3 @@
-<style>
-div.warn {
-    background-color: #fcf2f2;
-    border-color: #dFb5b4;
-    border-left: 5px solid #dfb5b4;
-    padding: 0.5em;
-    }
-</style>
-
 # Importing the Manifest
 
 Earlier on we created and downloaded our manifest, now we should import it
@@ -35,8 +26,8 @@ So the following is all we need
 hammer subscription upload --organization "Example Org" --file <filename here>
 ```
 
-<div class=warn>**NOTE**: At the time of writing using the organisation **name** wasnt working for me, so I had to use **--organization-id** method instead. The ID was found by doing **hammer organization list**
+>**NOTE**: At the time of writing using the organisation **name** wasnt working for me, so I had to use **--organization-id** method instead. The ID was found by doing **hammer organization list**
 <br/> <br/>
  hammer subscription upload --organization-id 5 --file &lt;filename&gt;
-</div>
+
 
