@@ -1,19 +1,11 @@
-<style>
-div.warn {
-    background-color: #fcf2f2;
-    border-color: #dFb5b4;
-    border-left: 5px solid #dfb5b4;
-    padding: 0.5em;
-    }
- </style>
 
 # Activation Keys
 
 Activation keys are required, when registering the host, in order to apply the correct settings to the host
 
-<div class=warn>**NOTE** Unfortunatley the version of subscription manager shipped in RHEL6.5 (and below) does not function correctly with Activation Keys. The default **subscription_manager_registration** snippet has a fix to ensure that the RH Common repo is included, so that provisioning should work fine.
+>**NOTE** Unfortunatley the version of subscription manager shipped in RHEL6.5 (and below) does not function correctly with Activation Keys. The default **subscription_manager_registration** snippet has a fix to ensure that the RH Common repo is included, so that provisioning should work fine.
 RHEL6.6 and RHEL7 do work correctly.
-</div>
+
 
 **NOTE:** We need to wait for our **content view** to publish and have an activation key created, before we continue
 
