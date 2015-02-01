@@ -1,12 +1,3 @@
-<style>
-div.warn {
-    background-color: #fcf2f2;
-    border-color: #dFb5b4;
-    border-left: 5px solid #dfb5b4;
-    padding: 0.5em;
-    }
- </style>
-
 # Attach Entitlements
 
 OK, lets get a list of whats availble to you, you are specifically looking for the **Pool IDs** here
@@ -40,17 +31,17 @@ You can **attach** this to your server as follows
 
 ```subscription-manager attach --pool=aaaabbbbccccddddeeeeffffgggghhh```
 
-<div class=warn>**NOTE**:
+>**NOTE**:
 If you get an error that reads like this
 
-<pre>
+><pre>
 Too many content sets for certificate Red Hat Satellite Employee Subscription.
 A newer client may be available to address this problem.
 See kbase https://access.redhat.com/knowledge/node/129003 for more information.
 </pre>
 
-then make sure you log on to Red Hat and select the verison of Satellite, as mentioned in the previous section. Be sure to click the update button
-</div>
+>then make sure you log on to Red Hat and select the verison of Satellite, as mentioned in the previous section. Be sure to click the update button
+
 
 You will then be able to attach to that pool. However, depending on your entitlemenmts, the pool you have atached to may not have **Software Collections**. If this is the case, use subscription manager to list all availble pools and attach one that contains **Software Collections**
 
