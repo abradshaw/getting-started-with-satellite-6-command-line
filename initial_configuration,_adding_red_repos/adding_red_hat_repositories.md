@@ -15,6 +15,7 @@ hammer repository-set  list --product "Red Hat Enterprise Linux Server" \
 
 To get us started we shall only enable three Red Hat repositories - these are enough to enable us to perform provisioning
 
+### Example RHEL 6 Channels
 ```
 # hammer repository-set enable  --organization "Example Org" \
 --product "Red Hat Enterprise Linux Server" \
@@ -31,5 +32,23 @@ To get us started we shall only enable three Red Hat repositories - these are en
 --name "Red Hat Enterprise Linux 6 Server - RH Common (RPMs)" \
 --basearch "x86_64"
 ```
+### Example RHEL 7 Channels
+```
+hammer repository-set enable  --organization "Example Org" \
+--product "Red Hat Enterprise Linux Server" \
+--name "Red Hat Enterprise Linux 7 Server (Kickstart)" \
+--releasever "7.0" --basearch "x86_64"
+
+hammer repository-set enable  --organization "Example Org" \
+--product "Red Hat Enterprise Linux Server" \
+--name "Red Hat Enterprise Linux 7 Server (RPMs)" \
+--releasever "7.0" --basearch "x86_64"
+
+hammer repository-set enable  --organization "Example Org" \
+--product "Red Hat Enterprise Linux Server" \
+--name "Red Hat Enterprise Linux 7 Server - RH Common (RPMs)" \
+--releasever "7.0" --basearch "x86_64"```
+
+
 
 So now you have enabled s few repositories, but they are not syncronised. See the next section for this

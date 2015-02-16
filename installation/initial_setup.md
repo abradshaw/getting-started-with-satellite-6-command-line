@@ -12,7 +12,7 @@ example.com --capsule-dns-reverse 30.16.172.in-addr.arpa \
 --capsule-dhcp-gateway 172.16.30.1 --capsule-tftp true
 ```
 
-Note: forwarders are stored in ```/etc/named/options.conf``` should you wish to change them later.
+>**Note**: forwarders are stored in ```/etc/named/options.conf``` should you wish to change them later.
 
 A full list of other katello-setup options are available via
 ```
