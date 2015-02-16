@@ -13,4 +13,4 @@ While the web interface is very nice, its often more efficient to use the comman
 
 We shall again start of with focusing on configuring a freshly installed Satellite so that it can provision machines. We will use an "all in one" setup, where the Satellite box will also perform DNS, DHCP and TFTP
 
-Many of the first steps are identical to those in the sister book **Getting Started with Satellite 6**, but we have included them here anyway 
+Many of the first steps are identical to those in the sister book **Getting Started with Satellite 6**, but we have included them here anyway

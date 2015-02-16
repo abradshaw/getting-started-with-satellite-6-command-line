@@ -1,6 +1,9 @@
 # Base Install
 
-Start with a fresh installation of RHEL 6.5, which was installed via ISO. I prefer this, over templates or machines deployed by Satellite/Foreman as it keeps it as clean as possible and there is no existing puppet configuration, might have lead to problems later on
+Start with a fresh installation of RHEL 6.6, which was installed via ISO. I prefer this, over templates or machines deployed by Satellite/Foreman as it keeps it as clean as possible and there is no existing puppet configuration, might have lead to problems later on
+
+>**NOTE**:
+I am currently working back through this book and adding in any RHEL7 specific steps
 
 When installing, be sure to just use "Base" as the installation type.
 

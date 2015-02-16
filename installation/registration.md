@@ -4,7 +4,10 @@ I like to follow a very precise way of registering the box, one that I have work
 
 From a command prompt type the following
 
-`subscription-manager register --type=satellite`
+```
+subscription-manager register --type=satellite
+```
+
 
 You will then be prompted for your credentials, enter them and the system should be correctly registered, but not attached/consuming entitlements
 
