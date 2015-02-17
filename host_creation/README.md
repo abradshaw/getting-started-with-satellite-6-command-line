@@ -2,12 +2,34 @@
 
 >**Note:** Currently there is no way of creating a new host from hammer, which is dissapointing. I have opened this [bug](https://bugzilla.redhat.com/show_bug.cgi?id=1153034)
 
->As with **host group** creation, I will add the work around (using the web UI) until the bug is fixed. Sorry
+>As with **host group** creation, I will add a couple of work arounds (one uses the API and one uses the web UI) until the bug is fixed. Sorry
 
 The below solution is taken directly from the  [sister book](http://gsw-satellite6.documentation.rocks/)
 
 
 ----
+#### Work Around 1
+
+This is another work around sent to me by Rodrique Heron. I have been unable to test it successfully but I shall include it here anyway
+
+```
+# Create host
+
+hammer host create --ask-root-password false --build false \
+--hostgroup-id ${hostgroup_id} --mac '54:54:00:86:ED:4F' --name
+"test-001" --root-password '12345678FOOD'
+
+# Update Host with ORG and Location
+
+curl -X PUT -k -u admin:mysecurepass -H "Accept:application/json" -d
+hosts[environment_id]=$puppet_env_id -d
+hosts[location_id]=$location_id -d hosts[organization_id]=${ORG_ID}
+https://localhost/api/hosts/${host_id} ```
+
+Full documentation of this above work-around is located [here](https://gist.github.com/swygue/854e4b6686ed2bbb2b49)
+
+#### Work Around 2
+
 From the web UI, go to
 
 ```Hosts > New Host```
