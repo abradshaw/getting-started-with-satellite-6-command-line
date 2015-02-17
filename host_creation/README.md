@@ -10,24 +10,68 @@ The below solution is taken directly from the  [sister book](http://gsw-satellit
 ----
 #### Work Around 1
 
-This is another work around sent to me by Rodrique Heron. I have been unable to test it successfully but I shall include it here anyway
+This is another work around sent to me by Rodrique Heron. Its a little bigger than the previous one but here goes
+
+##### Create Host
+
+Creating a host from the CLI with hammer requires the following options:
+
+ * --environment-id
+ * --architecture-id
+ * --domain-id
+ * --puppet-proxy-id
+ * --operatingsystem-id
+ * --partition-table-id
+
+
+These options can be satisfied via a hostgroup, which will be assumed already exist for this exercise.
+
+##### Define the organization, location and capsule name and id for the host.
 
 ```
-# Create host
+export ORG_NAME=MyOrg
+export ORG_LOCATION=MyLocation
+export ORG_ID=$(hammer --csv organization list --search "${ORG_NAME}"| awk -F, 'FNR == 2 {print $1}')
+export LOCATION_ID=$(hammer --csv location list --search "${ORG_LOCATION}" | awk -F, 'FNR == 2 {print $1}')
+```
 
-hammer host create --ask-root-password false --build false \
---hostgroup-id ${hostgroup_id} --mac '54:54:00:86:ED:4F' --name
-"test-001" --root-password '12345678FOOD'
+##### Define the Hostgroup name and ID
 
-# Update Host with ORG and Location
+```
+export HOSTGROUP_NAME='rhel-6-x86_64-soe'
+export HOSTGROUP_ID=$(hammer --csv hostgroup list --search "name = \"${HOSTGROUP_NAME}\""| awk -F, 'NR==2 {print $1}')
+```
 
-curl -X PUT -k -u admin:mysecurepass -H "Accept:application/json" -d
-hosts[environment_id]=$puppet_env_id -d
-hosts[location_id]=$location_id -d hosts[organization_id]=${ORG_ID}
-https://localhost/api/hosts/${host_id} ```
+##### Create Host
+
+```
+export DOMAIN_NAME='example.com'
+export HOST_SHORTNAME="test-103"
+export HOST_FQDN="${HOST_SHORTNAME}.${DOMAIN_NAME}"
+export HOST_MAC='52:55:00:54:0b:e1'
+export ROOT_PWD='12345678FOOD'
+
+hammer host create --ask-root-password false --build false --hostgroup-id ${HOSTGROUP_ID} --mac ${HOST_MAC} --name "${HOST_SHORTNAME}" --root-password ${ROOT_PWD}
+```
+
+##### Associate the host to an organization and location
+
+The functionality is not available with the hammer cli, we will leverage the API instead.
+
+```
+export HOST_ID=$(hammer host list | grep "${HOST_SHORTNAME}" | awk '{print $1}')
+
+json_file=$(mktemp)
+cat > ${json_file} <<EOF
+{"organization_id":"$ORG_ID","location_id":"$LOCATION_ID"}
+EOF
+
+curl -X PUT -k -u admin:securepassword -H 'Content-Type: application/json' -d @${json_file} https://localhost/api/hosts/${HOST_ID}
+```
 
 Full documentation of this above work-around is located [here](https://gist.github.com/swygue/854e4b6686ed2bbb2b49)
 
+----
 #### Work Around 2
 
 From the web UI, go to
