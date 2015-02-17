@@ -119,9 +119,21 @@ hammer hostgroup set-parameter --hostgroup "DC North"\
 >**Note:** I was holding back on publishing the book until this was resolved but now I have decided to go ahead and show the work around, I shall update the book once this is fixed
 
 
-#### Workaround
+#### Workaround 1
+If you really want to stay on the command line, and if you are reading this book I assume you do, then you can used a direct call to the api to "fix" this bug
 
-To change this, go to the web UI and select **Host Groups** under **configure**. Click on the **Host Group** you want to edit, and select the entry in the drop down for **Content Source** which you can see is blank in the screen shot below
+```
+curl -X PUT -k -u admin:supersecretpassword \
+ -H "Accept:application/json" \
+ -d hostgroup[content_source_id]=1 https://localhost/api/hostgroups/1
+```
+
+Many thanks to Rodrique Heron  for the above work around
+
+
+#### Workaround 2
+
+The other way to change this, go to the web UI and select **Host Groups** under **configure**. Click on the **Host Group** you want to edit, and select the entry in the drop down for **Content Source** which you can see is blank in the screen shot below
 
 ![](../images/set-content-source.png)
 
