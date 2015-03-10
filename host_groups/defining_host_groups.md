@@ -46,9 +46,9 @@ hammer hostgroup create --name "DC North" \
 Right away, we need to add it to to our **location** and **organisation**
 
 ```
-hammer location add-hostgroup --name "Europe" --hostgroup "DC North"
+hammer location add-hostgroup --name "${LOC}" --hostgroup "DC North"
 
-hammer organization add-hostgroup --name "Example Org" --hostgroup "DC North"
+hammer organization add-hostgroup --name "${ORG}" --hostgroup "DC North"
 ```
 Lets see what we have
 
@@ -74,9 +74,9 @@ Puppetclasses:
 Parameters:
 
 Locations:
-    Europe
+    *** Your location
 Organizations:
-    Example Org
+    *** Your organization
 ```
 
 
@@ -90,7 +90,7 @@ The activation key we can use **set-parameter** to set
 
 ```
 hammer hostgroup set-parameter --hostgroup "DC North" \
---name "kt_activation_keys"  --value "RHEL65-Activation-Key-1"
+--name "kt_activation_keys"  --value "${AK1}"
 ```
 
 That only really leaves "Content Source", but hammer doesnt seem to have a way to set this. Setting it from the UI shows three more params
@@ -108,10 +108,10 @@ hammer hostgroup set-parameter --hostgroup "DC North"\
 --name "kt_env" --value "Library"
 
 hammer hostgroup set-parameter --hostgroup "DC North"\
---name "kt_cv"  --value "RHEL65-Content_View-1"
+--name "kt_cv"  --value "${CV1}"
 
 hammer hostgroup set-parameter --hostgroup "DC North"\
---name "kt_org"  --value "Example_Org"
+--name "kt_org"  --value "${ORG}"
 ```
 
 ...still doesnt set the UI element :-/ It turns out that this functionality isnt yet in Hammer. This bug tracks the issue [Bug #7597: Hammer cant set "Content Source"](http://projects.theforeman.org/issues/7597)

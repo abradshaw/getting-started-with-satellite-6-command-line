@@ -34,9 +34,9 @@ To:            172.16.30.150
 Domains:
     example.com
 Locations:
-    Europe
+    *** Your location
 Organizations:
-    Example Org
+    *** Your Organisation
 
 ```
 
@@ -174,9 +174,9 @@ Options:
 So lets associate it
 
 ```
-hammer organization add-subnet --name "Example Org" --subnet "172.16.30.0/24"
+hammer organization add-subnet --name "${ORG}" --subnet "172.16.30.0/24"
 
-hammer location add-subnet --name "Europe" --subnet "172.16.30.0/24"
+hammer location add-subnet --name "${LOC}" --subnet "172.16.30.0/24"
 ```
 
 Finally, lets check that every thing has worked as we expected
@@ -200,9 +200,9 @@ To:            172.16.30.199
 Domains:
     example.com
 Locations:
-    Europe
+    *** Your location
 Organizations:
-    Example Org
+    *** Your organisation
 
 ```
 

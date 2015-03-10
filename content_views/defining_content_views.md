@@ -4,8 +4,15 @@ Once the repositories that we need are syncronised, we can get our content view 
 
 OK, lets remind ourself of the IDs of our syncronised repositories, as its simpler to define the repositories we want to add to our **content view**, by ID
 
+Again, to simplify cut and paste, lets define another variable
+
 ```
-hammer repository list --organization "Example Org"
+CV1="RHEL65-Content_View"
+```
+
+
+```
+hammer repository list --organization "${ORG}"
 
 ---|-----------------------------------------------------------------|-----------
 ID | NAME                                                            | CONTENT TYPE
@@ -21,23 +28,23 @@ Lets create our **content view** now, called **RHEL65-Content_View**
 
 
 ```
-hammer content-view create --name "RHEL65-Content_View" \
---description "Our initial rhel 6.5 content view" \
---organization "Example Org"
+hammer content-view create --name "${CV1}" \
+ --description "Our initial first content view" \
+ --organization "${ORG}"
 ```
 
 Next we add the repositories to the **content view**
 
 ```
 hammer content-view update --repository-ids 1,2,3 \
---name "RHEL65-Content_View" --organization "Example Org"
+--name "RHEL65-Content_View" --organization "${ORG}"
 ```
 
 Finally we can publish our **content view**
 
 ```
-hammer content-view publish --name "RHEL65-Content_View" \
---organization "Example Org"
+hammer content-view publish --name "${CV1}" \
+--organization "${ORG}"
 ```
 
 **NOTE:** Its possible to also add the ```--async``` to this publish command if required

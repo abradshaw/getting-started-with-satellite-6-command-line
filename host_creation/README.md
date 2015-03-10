@@ -26,6 +26,8 @@ Creating a host from the CLI with hammer requires the following options:
 
 These options can be satisfied via a hostgroup, which will be assumed already exist for this exercise.
 
+**NEED TOVERIFY FROM HERE DOWN**
+
 ##### Define the organization, location and capsule name and id for the host.
 
 ```

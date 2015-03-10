@@ -23,7 +23,7 @@ Options:
 So the following is all we need
 
 ```
-hammer subscription upload --organization "Example Org" --file <filename here>
+hammer subscription upload --organization "${ORG}" --file <filename here>
 ```
 
 >**NOTE**: At the time of writing using the organisation **name** wasnt working for me, so I had to use **--organization-id** method instead. The ID was found by doing **hammer organization list**

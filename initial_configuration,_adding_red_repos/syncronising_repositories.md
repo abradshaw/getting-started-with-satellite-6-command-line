@@ -11,7 +11,7 @@ So in theory this should work
 ```
 hammer repository synchronize \
 --name "Red Hat Enterprise Linux 6 Server - RH Common Beta RPMs x86_64" \
---organization "Example Org"
+--organization "${ORG}"
 ```
 
 However, once you have started creating content views, you may see errors due to the repository existing more than once
@@ -19,7 +19,7 @@ However, once you have started creating content views, you may see errors due to
 ```
 hammer repository synchronize \
 --name "Red Hat Enterprise Linux 6 Server - RH Common Beta RPMs x86_64" \
---organization "Example Org"
+--organization "${ORG}"
 Could not synchronize the repository:
   Error: repository found more than once
 ```
@@ -27,7 +27,7 @@ Could not synchronize the repository:
 If we take a look at the repositories we have, we can confirm this
 
 ```
-hammer repository list --organization "Example Org"
+hammer repository list --organization "${ORG}"
 ---|----------------------------------------------------------------|-------------
 ID | NAME                                                           | CONTENT TYPE
 ---|----------------------------------------------------------------|-------------
@@ -42,8 +42,8 @@ ID | NAME                                                           | CONTENT TY
 
 As a general rule, you should use the lowest ID for each duplicate and then you can synchronise via ID
 
-```hammer repository synchronize --id 6 --organization "Example Org" ```
+```hammer repository synchronize --id 6 --organization "${ORG}" ```
 
 Unless you are happy to wait for it to finish you can also add the **--async** option to the command
 
-```hammer repository synchronize --id 6 --organization "Example Org" --async```
+```hammer repository synchronize --id 6 --organization "${ORG}" --async```

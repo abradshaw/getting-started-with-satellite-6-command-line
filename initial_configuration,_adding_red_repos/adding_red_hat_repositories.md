@@ -10,44 +10,44 @@ There are a large number of repositories available, as can be seen by doing
 
 ```
 hammer repository-set  list --product "Red Hat Enterprise Linux Server" \
---organization  "Example Org"
+--organization  "${ORG}"
 ```
 
 To get us started we shall only enable three Red Hat repositories - these are enough to enable us to perform provisioning
 
 ### Example RHEL 6 Channels
 ```
-# hammer repository-set enable  --organization "Example Org" \
---product "Red Hat Enterprise Linux Server" \
---name "Red Hat Enterprise Linux 6 Server (Kickstart)" \
---releasever "6.5" --basearch "x86_64"
+# hammer repository-set enable  --organization "${ORG}" \
+ --product "Red Hat Enterprise Linux Server" \
+ --name "Red Hat Enterprise Linux 6 Server (Kickstart)" \
+ --releasever "6.5" --basearch "x86_64"
 
-# hammer repository-set enable  --organization "Example Org" \
---product "Red Hat Enterprise Linux Server" \
---name "Red Hat Enterprise Linux 6 Server (RPMs)" \
---releasever "6.5" --basearch "x86_64"
+# hammer repository-set enable  --organization "${ORG}" \
+ --product "Red Hat Enterprise Linux Server" \
+ --name "Red Hat Enterprise Linux 6 Server (RPMs)" \
+ --releasever "6.5" --basearch "x86_64"
 
-# hammer repository-set enable  --organization "Example Org" \
---product "Red Hat Enterprise Linux Server" \
---name "Red Hat Enterprise Linux 6 Server - RH Common (RPMs)" \
---basearch "x86_64"
+# hammer repository-set enable  --organization "${ORG}" \
+ --product "Red Hat Enterprise Linux Server" \
+ --name "Red Hat Enterprise Linux 6 Server - RH Common (RPMs)" \
+ --basearch "x86_64"
 ```
 ### Example RHEL 7 Channels
 ```
-hammer repository-set enable  --organization "Example Org" \
---product "Red Hat Enterprise Linux Server" \
---name "Red Hat Enterprise Linux 7 Server (Kickstart)" \
---releasever "7.0" --basearch "x86_64"
+hammer repository-set enable  --organization "${ORG}" \
+ --product "Red Hat Enterprise Linux Server" \
+ --name "Red Hat Enterprise Linux 7 Server (Kickstart)" \
+ --releasever "7.0" --basearch "x86_64"
 
-hammer repository-set enable  --organization "Example Org" \
---product "Red Hat Enterprise Linux Server" \
---name "Red Hat Enterprise Linux 7 Server (RPMs)" \
---releasever "7.0" --basearch "x86_64"
+hammer repository-set enable  --organization "${ORG}" \
+ --product "Red Hat Enterprise Linux Server" \
+ --name "Red Hat Enterprise Linux 7 Server (RPMs)" \
+ --releasever "7.0" --basearch "x86_64"
 
-hammer repository-set enable  --organization "Example Org" \
---product "Red Hat Enterprise Linux Server" \
---name "Red Hat Enterprise Linux 7 Server - RH Common (RPMs)" \
---releasever "7.0" --basearch "x86_64"```
+hammer repository-set enable  --organization "${ORG}" \
+ --product "Red Hat Enterprise Linux Server" \
+ --name "Red Hat Enterprise Linux 7 Server - RH Common (RPMs)" \
+ --releasever "7.0" --basearch "x86_64"```
 
 
 

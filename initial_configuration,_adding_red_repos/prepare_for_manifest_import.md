@@ -25,8 +25,17 @@ Options:
 
 So its probably enough to just specify the **--name** option
 
+Lets setup some variables to use throughout the book, replace them with the values that are meaningful to you
+
 ```
-hammer organization create  --name "Example Org"
+ORG="Example Org"
+LOC="Europe"
+```
+
+Ok, now we have those set, we need to get an organisation and a location set, before we import the manifest.
+
+```
+hammer organization create  --name "${ORG}"
 Organization created
 
 ```
@@ -48,7 +57,7 @@ Options:
 OK, that also looks simple then
 
 ```
-hammer location create --name "Europe"
+hammer location create --name "${LOC}"
 Location created
 ```
 

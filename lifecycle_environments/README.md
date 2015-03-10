@@ -11,18 +11,18 @@ For now lets go ahead and create the four **Lifecycle Environments** mentioned a
 
 ```
 hammer lifecycle-environment create --name "Crash" \
---description "For initial testing" --organization "Example Org" \
+--description "For initial testing" --organization "${ORG}" \
 --prior "Library"
 
 hammer lifecycle-environment create --name "Development" \
 --description "Initial testing for the App guys" \
---organization "Example Org" --prior "Crash"
+--organization "${ORG}" --prior "Crash"
 
 hammer lifecycle-environment create --name "QA" \
 --description "QA testing for the App guys" \
---organization "Example Org" --prior "Development"
+--organization "${ORG}" --prior "Development"
 
 hammer lifecycle-environment create --name "Production" \
 --description "Production Environment" \
---organization "Example Org" --prior "QA"
+--organization "${ORG}" --prior "QA"
 ```

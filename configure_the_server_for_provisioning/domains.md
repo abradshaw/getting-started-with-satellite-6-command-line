@@ -15,13 +15,13 @@ ID | NAME
 Domains can and indeed should be part of your  **location** and **organisation**, so we shall probably have to move it. We can do this with
 
 ```
-hammer location add-domain --domain "example.com" --name "Europe"
+hammer location add-domain --domain "example.com" --name "${LOC}e"
 ```
 
 Next the **location**
 
 ```
-hammer organization add-domain --domain "example.com" --name "Example Org"
+hammer organization add-domain --domain "example.com" --name "${ORG}"
 ```
 
 Finally we can verify that this has worked, using the ID we can see in step 1
@@ -35,9 +35,9 @@ DNS Id:
 Subnets:
 
 Locations:
-    Europe
+    *** your location
 Organizations:
-    Example Org
+    *** your org name
 Parameters:
 
 Created at:    2014/09/18 17:20:41

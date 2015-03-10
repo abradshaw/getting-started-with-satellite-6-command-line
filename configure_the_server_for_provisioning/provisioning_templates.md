@@ -71,10 +71,10 @@ Operating systems:
 
 Locations:
     Default_Location
-    Europe
+    *** Your location
 Organizations:
     Default_Organization
-    Example Org
+    *** Your organisation
 
 ```
 
@@ -110,8 +110,8 @@ Operating systems:
     RedHat 6.5
 Locations:
     Default_Location
-    Europe
+    *** Your location
 Organizations:
     Default_Organization
-    Example Org
+    *** Your organisation
 ```
