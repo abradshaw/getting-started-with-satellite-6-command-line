@@ -14,6 +14,8 @@ example.com --capsule-dns-reverse 30.16.172.in-addr.arpa \
 
 >**Note**: forwarders are stored in ```/etc/named/options.conf``` should you wish to change them later.
 
+>**Note**: if you omit  ```--capsule-dhcp-nameservers``` then a default nameservers option will be created in the dhcp config for the satellite servers own address, meaning that the DHCP server will advertise the satellite as the DNS server. If this is not what you want, you can add something like   ```--capsule-dhcp-nameservers 10.0.0.1, 10.0.0.2``` to the main katello-installer options above
+
 A full list of other katello-setup options are available via
 ```
 katello-installer --help
