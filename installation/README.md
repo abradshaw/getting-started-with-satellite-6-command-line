@@ -81,6 +81,12 @@ public (default, active)
 ```
 
 
+As I have used --permanent above, we will have to restart the firewall for this to take effect 
+
+```
+systemctl restart firewalld
+```
+
 
 
 More information on what each of these ports are for can be found  in [Installation Guide Prerequisites](https://access.redhat.com/documentation/en-US/Red_Hat_Satellite/6.0/html-single/Installation_Guide/index.html#Prerequisites3)
