@@ -59,10 +59,8 @@ Of course this is not what we require, so lets add in all the ports we require i
 
 
 ```
-firewall-cmd --permanent --zone=public --add-port=80/tcp \
---add-port=443/tcp  --add-port=5671/tcp --add-port=8140/tcp \
---add-port=9090/tcp --add-port=53/tcp --add-port=53/udp \
---add-port=67/udp --add-port=68/udp --add-port=69/udp
+# firewall-cmd --zone=public  --add-service=RH-Satellite-6 \
+ --add-service=dhcp --add-service=dns --add-service=tftp
 ```
 
 Now run that command again.
@@ -71,20 +69,20 @@ Now run that command again.
 firewall-cmd --zone=public --list-all
 public (default, active)
   interfaces: eth0
-  sources:
-  services: dhcpv6-client ssh
-  ports: 443/tcp 80/tcp 8140/tcp 9090/tcp 67/udp 68/udp 53/tcp 69/udp 53/udp 5671/tcp
+  sources: 
+  services: RH-Satellite-6 dhcp dhcpv6-client dns ssh tftp
+  ports: 
   masquerade: no
-  forward-ports:
-  icmp-blocks:
-  rich rules:
+  forward-ports: 
+  icmp-blocks: 
+  rich rules: 
 ```
 
 
-As I have used --permanent above, we will have to restart the firewall for this to take effect 
+As I have used --permanent above, we will have to restart the firewall for this to take effect. We use ```firewall-cmd --reload``` as it will keep the existing state information.  See the man page for more details
 
 ```
-systemctl restart firewalld
+firewall-cmd  --reload 
 ```
 
 
