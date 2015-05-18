@@ -59,8 +59,9 @@ Of course this is not what we require, so lets add in all the ports we require i
 
 
 ```
-# firewall-cmd --zone=public  --add-service=RH-Satellite-6 \
- --add-service=dhcp --add-service=dns --add-service=tftp
+# firewall-cmd --permanent --zone=public  \ 
+ --add-service=RH-Satellite-6 --add-service=dhcp \ 
+ --add-service=dns --add-service=tftp
 ```
 
 Now run that command again.
@@ -79,7 +80,7 @@ public (default, active)
 ```
 
 
-As I have used --permanent above, we will have to restart the firewall for this to take effect. We use ```firewall-cmd --reload``` as it will keep the existing state information.  See the man page for more details
+As I have used ```--permanent``` above, we will have to restart the firewall for this to take effect. We use ```firewall-cmd --reload``` as it will keep the existing state information.  See the man page for more details
 
 ```
 firewall-cmd  --reload 
