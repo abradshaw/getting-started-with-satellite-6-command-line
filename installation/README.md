@@ -53,7 +53,6 @@ firewall-cmd --zone=public \
  --change-interface=nicInterfaceName
 ```
 
-
 OK, now we have verified that, lets take a look at the default rules in place
 
 ```
