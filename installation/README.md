@@ -46,6 +46,14 @@ public
   interfaces: eth0
 ```
 
+If the active zones list is empty, its probably because the NIC has not been assigned to a group:
+
+```
+firewall-cmd --zone=public \
+ --change-interface=nicInterfaceName
+```
+
+
 OK, now we have verified that, lets take a look at the default rules in place
 
 ```
