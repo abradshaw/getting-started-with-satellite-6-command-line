@@ -59,7 +59,7 @@ Of course this is not what we require, so lets add in all the ports we require i
 
 
 ```
-# firewall-cmd --permanent --zone=public  \ 
+# firewall-cmd  --permanent --zone=public  \ 
  --add-service=RH-Satellite-6 --add-service=dhcp \ 
  --add-service=dns --add-service=tftp
 ```
