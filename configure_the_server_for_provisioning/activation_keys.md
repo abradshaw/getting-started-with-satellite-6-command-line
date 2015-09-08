@@ -17,14 +17,15 @@ AK1="RHEL65-Activation-Key-1"
 
 ```
 hammer activation-key create --name "${AK1}" \
- --content-view "RHEL65-content-view-1" \
- --lifecycle-environment Library --organization "${ORG}"
+ --content-view "${CV1}" --lifecycle-environment Library \
+ --organization "${ORG}"
+
 Activation key created
 ```
 If you are not using **6Server** channels, its critical to set the release version on the key. Even if you are, its probably better to do so
 ```
 hammer activation-key update --release-version "6.5"  \
- --organization "${ORG}" --name "AK1"
+ --organization "${ORG}" --name "${AK1}"
 Activation key updated
 ```
 
