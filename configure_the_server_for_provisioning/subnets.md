@@ -149,10 +149,10 @@ OK, we have enough information to create the subnet
 
 ```
 hammer subnet create --dhcp-id 1 --dns-id 1  \
---dns-primary 172.16.30.250 --domain-ids 1 \
---from "172.16.30.100" --gateway "172.16.30.1"\
---mask "255.255.255.0" --name "172.16.30.0/24"\
---network "172.16.30.0" --tftp-id 1 --to "172.16.30.199"
+ --dns-primary 172.16.30.250 --domain-ids 1 \
+ --from "172.16.30.100" --gateway "172.16.30.1"\
+ --mask "255.255.255.0" --name "172.16.30.0/24"\
+ --network "172.16.30.0" --tftp-id 1 --to "172.16.30.199"
 ```
 
 OK, that created the subnet, now we need to associate it with our **location** and **organisation**. The command is very similar to the one we used for our **domain** earlier. Check out the syntax
