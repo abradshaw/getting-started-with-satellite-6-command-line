@@ -116,3 +116,58 @@ Organizations:
     Default_Organization
     *** Your organisation
 ```
+
+
+### Associate the PXE Linux Template with the OS
+
+The kickstart template was take care of above, now we need to make sure that the PXE template is associated with the OS correctly 
+
+```
+# hammer template info --id 21
+Id:                21
+Name:              Kickstart default PXELinux
+Type:              PXELinux
+Operating systems: 
+
+Locations:         
+    Default Location
+    *** Your location
+Organisations:     
+    Adrian_Inc
+    *** Your organisation
+```
+
+You can see that the operating system is empty. Lets take care of that
+
+```
+hammer os update --help
+Usage:
+    hammer os update [OPTIONS]
+
+Options:
+ --architecture-ids ARCHITECTURE_IDS                     Comma separated list of values.
+ --architectures ARCHITECTURE_NAMES                      Comma separated list of values.
+ --config-template-ids CONFIG_TEMPLATE_IDS               Comma separated list of values.
+ --config-templates CONFIG_TEMPLATE_NAMES                Comma separated list of values.
+ --description DESCRIPTION                                
+ --family FAMILY                                          
+ --id ID                                                  
+ --major MAJOR                                            
+ --media MEDIUM_NAMES                                    Comma separated list of values.
+ --medium-ids MEDIUM_IDS                                 Comma separated list of values.
+ --minor MINOR                                            
+ --name NAME                                              
+ --partition-table-ids, --ptable-ids PARTITION_TABLE_IDS Comma separated list of values.
+ --partition-tables, --ptables PARTITION_TABLE_NAMES     Comma separated list of values.
+ --password-hash PASSWORD_HASH                           Root password hash function to use, one of MD5, SHA256, SHA512
+ --release-name RELEASE_NAME                              
+ --title TITLE                                           Operating system title
+ -h, --help                                              print help
+```
+
+Ok, that seems simple, lets do it 
+
+```
+hammer os update --id 1 --config-template-ids 21
+Operating system updated
+```
