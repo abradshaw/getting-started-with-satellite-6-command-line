@@ -140,7 +140,7 @@ Organisations:
 You can see that the operating system is empty. Lets take care of that
 
 ```
-hammer os update --help
+# hammer os update --help
 Usage:
     hammer os update [OPTIONS]
 
@@ -168,6 +168,20 @@ Options:
 Ok, that seems simple, lets do it 
 
 ```
-hammer os update --id 1 --config-template-ids 21
+# hammer os update --id 1 --config-template-ids 21
 Operating system updated
+
+hammer template info --id 21
+Id:                21
+Name:              Kickstart default PXELinux
+Type:              PXELinux
+Operating systems: 
+    RedHat 6.5
+Locations:         
+    Default Location
+    *** Your location
+Organisations:     
+    Adrian_Inc
+    *** Your organisation
+
 ```
