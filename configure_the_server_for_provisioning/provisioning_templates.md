@@ -171,7 +171,7 @@ Ok, that seems simple, lets do it
 # hammer os update --id 1 --config-template-ids 21
 Operating system updated
 
-hammer template info --id 21
+# hammer template info --id 21
 Id:                21
 Name:              Kickstart default PXELinux
 Type:              PXELinux
