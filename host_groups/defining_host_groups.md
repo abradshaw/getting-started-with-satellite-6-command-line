@@ -35,12 +35,12 @@ We will create a host group called **"DC North"** in the **Library** - **Lifecyc
 
 ```
 hammer hostgroup create --name "DC North" \
---architecture "x86_64" --domain "example.com"\
---environment "KT_Example_Org_Library_RHEL65_Content_View_1_5"\
---medium "Example_Org/Library/Red_Hat_6_Server_Kickstart_x86_64_6_5"\
---operatingsystem-id 1 --ptable "Kickstart default"\
---puppet-ca-proxy-id 1 --puppet-proxy-id 1 \
---subnet "172.16.30.0/24"
+ --architecture "x86_64" --domain "example.com"\
+ --environment "KT_Example_Org_Library_RHEL65_Content_View_1_5"\
+ --medium "Example_Org/Library/Red_Hat_6_Server_Kickstart_x86_64_6_5"\
+ --operatingsystem-id 1 --ptable "Kickstart default"\
+ --puppet-ca-proxy-id 1 --puppet-proxy-id 1 \ 
+ --subnet "172.16.30.0/24"
 ```
 
 Right away, we need to add it to to our **location** and **organisation**
