@@ -37,7 +37,7 @@ Next we add the repositories to the **content view**
 
 ```
 hammer content-view update --repository-ids 1,2,3 \
---name "RHEL65-Content_View" --organization "${ORG}"
+ --name "${CV1}" --organization "${ORG}"
 ```
 
 Finally we can publish our **content view**
