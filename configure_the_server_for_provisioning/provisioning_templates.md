@@ -8,6 +8,7 @@ If you want to change one of them, then you will need to clone it
 
 >**NOTE**:
 At the time of writing (just after GA, hammer still had not been updated to include this clone functionality. If you need to clone a template, you will need to use the UI
+[Bugzilla 1160292](https://bugzilla.redhat.com/show_bug.cgi?id=1160292)
 
 You can get a list of **Provisioning Templates** by doing the following (note that this command produces paged output by defualt, so Ive used the **--per-page 9999** option)
 
