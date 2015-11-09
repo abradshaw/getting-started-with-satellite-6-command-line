@@ -49,6 +49,7 @@ hammer repository-set enable  --organization "${ORG}" \
  --name "Red Hat Enterprise Linux 7 Server - RH Common (RPMs)" \
  --releasever "7.0" --basearch "x86_64"```
 
-
+>**NOTE**:
+In Satellite 6.1, you will need to add the Satellite Tools repository and the RH Common repository can be removed (unless you use it for other things like the rhevm-guest.agent, in which case you will need both
 
 So now you have enabled s few repositories, but they are not syncronised. See the next section for this
