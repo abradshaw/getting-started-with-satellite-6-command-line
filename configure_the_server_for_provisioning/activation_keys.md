@@ -12,7 +12,7 @@ RHEL6.6 and RHEL7 do work correctly.
 Once again we will use a variable to aid copy and pasting
 
 ```
-AK1="RHEL65-Activation-Key-1"
+AK1="ak-rhel7-base-1"
 ```
 
 ```
@@ -22,9 +22,9 @@ hammer activation-key create --name "${AK1}" \
 
 Activation key created
 ```
-If you are not using **6Server** channels, its critical to set the release version on the key. Even if you are, its probably better to do so
+Even when using the UI, its easy to miss this step.
 ```
-hammer activation-key update --release-version "6.5"  \
+hammer activation-key update --release-version "7Server"  \
  --organization "${ORG}" --name "${AK1}"
 Activation key updated
 ```

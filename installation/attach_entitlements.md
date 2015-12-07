@@ -60,7 +60,7 @@ subscription-manager repos --disable "*"
 
 subscription-manager repos --enable rhel-6-server-rpms \
 --enable rhel-server-rhscl-6-rpms \
---enable rhel-6-server-satellite-6.0-rpms
+--enable rhel-6-server-satellite-6.1-rpms
 ```
 
 Once done, check that you have access to **exactly** three repos
@@ -70,7 +70,7 @@ Once done, check that you have access to **exactly** three repos
 ...
 
 rhel-6-server-rpms                  Red Hat Enterprise Linux 6 Server (RPMs)                               12,913
-rhel-6-server-satellite-6.0-rpms    Red Hat Satellite 6.0 (for RHEL 6 Server) (RPMs)                          345
+rhel-6-server-satellite-6.1-rpms    Red Hat Satellite 6.1 (for RHEL 6 Server) (RPMs)                          345
 rhel-server-rhscl-6-rpms            Red Hat Software Collections RPMs for Red Hat Enterprise Linux 6 Server 1,269
 ```
 
@@ -81,7 +81,7 @@ subscription-manager repos --disable "*"
 
 subscription-manager repos --enable rhel-7-server-rpms \
 --enable rhel-server-rhscl-7-rpms \
---enable rhel-7-server-satellite-6.0-rpms
+--enable rhel-7-server-satellite-6.1-rpms
 ```
 
 Once done, check that you have access to **exactly** three repos
@@ -92,7 +92,7 @@ Once done, check that you have access to **exactly** three repos
 ...
 
 rhel-7-server-rpms/7Server/x86_64               Red Hat Enterprise Linux 7 Server (RPMs)                                5,326
-rhel-7-server-satellite-6.0-rpms/7Server/x86_64 Red Hat Satellite 6.0 (for RHEL 7 Server) (RPMs)                          478
+rhel-7-server-satellite-6.1-rpms/7Server/x86_64 Red Hat Satellite 6.1 (for RHEL 7 Server) (RPMs)                          478
 rhel-server-rhscl-7-rpms/7Server/x86_64         Red Hat Software Collections RPMs for Red Hat Enterprise Linux 7 Server 1,939
 ```
 

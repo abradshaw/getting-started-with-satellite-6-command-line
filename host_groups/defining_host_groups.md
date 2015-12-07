@@ -8,27 +8,43 @@ Usage:
     hammer hostgroup create [OPTIONS]
 
 Options:
-    --architecture ARCHITECTURE_NAME Architecture name
-    --architecture-id ARCHITECTURE_ID
-    --domain DOMAIN_NAME          Domain name
-    --domain-id DOMAIN_ID         May be numerical id or domain name
-    --environment ENVIRONMENT_NAME Environment name
-    --environment-id ENVIRONMENT_ID
-    --medium MEDIUM_NAME          Medium name
-    --medium-id MEDIUM_ID
-    --name NAME
-    --operatingsystem-id OPERATINGSYSTEM_ID
-    --parent-id PARENT_ID
-    --ptable PTABLE_NAME          Partition table name
-    --ptable-id PTABLE_ID
-    --puppet-ca-proxy-id PUPPET_CA_PROXY_ID
-    --puppet-proxy-id PUPPET_PROXY_ID
-    --puppetclass-ids PUPPETCLASS_IDS Comma separated list of values.
-    --realm REALM_NAME            Name to search by
-    --realm-id REALM_ID           May be numerical id or realm name
-    --subnet SUBNET_NAME          Subnet name
-    --subnet-id SUBNET_ID
-    -h, --help                    print help
+ --architecture ARCHITECTURE_NAME                      Architecture name
+ --architecture-id ARCHITECTURE_ID                      
+ --content-source-id CONTENT_SOURCE_ID                  
+ --content-view CONTENT_VIEW_NAME                      Name to search by
+ --content-view-id CONTENT_VIEW_ID                     content view numeric identifier
+ --domain DOMAIN_NAME                                  Domain name
+ --domain-id DOMAIN_ID                                 Numerical ID or domain name
+ --environment ENVIRONMENT_NAME                        Environment name
+ --environment-id ENVIRONMENT_ID                        
+ --lifecycle-environment LIFECYCLE_ENVIRONMENT_NAME    Name to search by
+ --lifecycle-environment-id LIFECYCLE_ENVIRONMENT_ID   ID of the environment
+ --location-ids LOCATION_IDS                           Comma separated list of values.
+ --locations LOCATION_NAMES                            Comma separated list of values.
+ --medium MEDIUM_NAME                                  Medium name
+ --medium-id MEDIUM_ID                                  
+ --name NAME                                            
+ --operatingsystem OPERATINGSYSTEM_TITLE               Operating system title
+ --operatingsystem-id OPERATINGSYSTEM_ID                
+ --organization-ids ORGANIZATION_IDS                   organization ID
+                                                       Comma separated list of values.
+ --organizations ORGANIZATION_NAMES                    Comma separated list of values.
+ --parent PARENT_NAME                                  Name of parent hostgroup
+ --parent-id PARENT_ID                                  
+ --partition-table, --ptable PARTITION_TABLE_NAME      Partition table name
+ --partition-table-id, --ptable-id PARTITION_TABLE_ID   
+ --puppet-ca-proxy PUPPET_CA_PROXY_NAME                Name of puppet CA proxy
+ --puppet-ca-proxy-id PUPPET_CA_PROXY_ID                
+ --puppet-class-ids, --puppetclass-ids PUPPETCLASS_IDS List of puppetclass ids
+                                                       Comma separated list of values.
+ --puppet-classes PUPPET_CLASS_NAMES                   Comma separated list of values.
+ --puppet-proxy PUPPET_PROXY_NAME                      Name of puppet proxy
+ --puppet-proxy-id PUPPET_PROXY_ID                      
+ --realm REALM_NAME                                    Name to search by
+ --realm-id REALM_ID                                   Numerical ID or realm name
+ --subnet SUBNET_NAME                                  Subnet name
+ --subnet-id SUBNET_ID                                  
+ -h, --help                                            print help
 ```
 
 We will create a host group called **"DC North"** in the **Library** - **Lifecycle Environment**. From the previous section, we know that our **--operatingsystem-id** is **1** and the ** --ptable** is **7**

@@ -174,9 +174,7 @@ Options:
 So lets associate it
 
 ```
-hammer organization add-subnet --name "${ORG}" --subnet "172.16.30.0/24"
-
-hammer location add-subnet --name "${LOC}" --subnet "172.16.30.0/24"
+hammer subnet update --name "172.16.0.0/24" --locations "${LOC}" --organizations  "${ORG}"
 ```
 
 Finally, lets check that every thing has worked as we expected
