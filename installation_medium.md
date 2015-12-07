@@ -74,6 +74,7 @@ hammer repository synchronize --id 11 --organization "${ORG}"
 ```
 We will also need to add the location to this one
 
+```
 hammer location add-medium --medium-id 8 --name "${LOC}"
 
 hammer medium info --id 8
