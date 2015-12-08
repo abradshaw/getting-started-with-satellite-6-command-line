@@ -5,56 +5,46 @@ This page has been entirely re-written in the update to 6.1, nearly all of the w
 ```
 hammer hostgroup create --help
 Usage:
-    hammer host create [OPTIONS]
+    hammer hostgroup create [OPTIONS]
 
 Options:
- --architecture ARCHITECTURE_NAME                       Architecture name
- --architecture-id ARCHITECTURE_ID                       
- --ask-root-password ASK_ROOT_PW                        One of true/false, yes/no, 1/0.
- --build BUILD                                          One of true/false, yes/no, 1/0.
-                                                        Default: "true"
- --comment COMMENT                                      Additional information about this host
- --compute-attributes COMPUTE_ATTRS                     Compute resource attributes.
-                                                        Comma-separated list of key=value.
- --compute-profile COMPUTE_PROFILE_NAME                 Name to search by
- --compute-profile-id COMPUTE_PROFILE_ID                 
- --compute-resource COMPUTE_RESOURCE_NAME               Compute resource name
- --compute-resource-id COMPUTE_RESOURCE_ID               
- --domain DOMAIN_NAME                                   Domain name
- --domain-id DOMAIN_ID                                  Numerical ID or domain name
- --enabled ENABLED                                      One of true/false, yes/no, 1/0.
-                                                        Default: "true"
- --environment ENVIRONMENT_NAME                         Environment name
- --environment-id ENVIRONMENT_ID                         
- --hostgroup HOSTGROUP_NAME                             Hostgroup name
- --hostgroup-id HOSTGROUP_ID                             
- --image IMAGE_NAME                                     Name to search by
- --image-id IMAGE_ID                                     
- --interface INTERFACE                                  Interface parameters.
-                                                        Comma-separated list of key=value.
-                                                        Can be specified multiple times.
- --ip IP                                                not required if using a subnet with DHCP proxy
- --location LOCATION_NAME                               Location name
- --location-id LOCATION_ID                               
- --mac MAC                                              required for managed host that is bare metal, not required if it's a
-                                                        virtual machine
- --managed MANAGED                                      One of true/false, yes/no, 1/0.
-                                                        Default: "true"
- --medium MEDIUM_NAME                                   Medium name
- --medium-id MEDIUM_ID                                   
- --model MODEL_NAME                                     Model name
- --model-id MODEL_ID                                     
- --name NAME                                             
- --operatingsystem OPERATINGSYSTEM_TITLE                Operating system title
- --operatingsystem-id OPERATINGSYSTEM_ID                 
- --organization ORGANIZATION_NAME                       Organisation name
- --organization-id ORGANIZATION_ID                      organization ID
- --owner OWNER_LOGIN                                    Login of the owner
- --owner-id OWNER_ID                                    ID of the owner
- --owner-type OWNER_TYPE                                Host's owner type
-                                                        Possible value(s): 'User', 'Usergroup'
- --parameters PARAMS                                    Host parameters.
-                                                        Comma-separated list of key=value.
+ --architecture ARCHITECTURE_NAME                      Architecture name
+ --architecture-id ARCHITECTURE_ID                      
+ --content-source-id CONTENT_SOURCE_ID                  
+ --content-view CONTENT_VIEW_NAME                      Name to search by
+ --content-view-id CONTENT_VIEW_ID                     content view numeric identifier
+ --domain DOMAIN_NAME                                  Domain name
+ --domain-id DOMAIN_ID                                 Numerical ID or domain name
+ --environment ENVIRONMENT_NAME                        Environment name
+ --environment-id ENVIRONMENT_ID                        
+ --lifecycle-environment LIFECYCLE_ENVIRONMENT_NAME    Name to search by
+ --lifecycle-environment-id LIFECYCLE_ENVIRONMENT_ID   ID of the environment
+ --location-ids LOCATION_IDS                           Comma separated list of values.
+ --locations LOCATION_NAMES                            Comma separated list of values.
+ --medium MEDIUM_NAME                                  Medium name
+ --medium-id MEDIUM_ID                                  
+ --name NAME                                            
+ --operatingsystem OPERATINGSYSTEM_TITLE               Operating system title
+ --operatingsystem-id OPERATINGSYSTEM_ID                
+ --organization-ids ORGANIZATION_IDS                   organization ID
+                                                       Comma separated list of values.
+ --organizations ORGANIZATION_NAMES                    Comma separated list of values.
+ --parent PARENT_NAME                                  Name of parent hostgroup
+ --parent-id PARENT_ID                                  
+ --partition-table, --ptable PARTITION_TABLE_NAME      Partition table name
+ --partition-table-id, --ptable-id PARTITION_TABLE_ID   
+ --puppet-ca-proxy PUPPET_CA_PROXY_NAME                Name of puppet CA proxy
+ --puppet-ca-proxy-id PUPPET_CA_PROXY_ID                
+ --puppet-class-ids, --puppetclass-ids PUPPETCLASS_IDS List of puppetclass ids
+                                                       Comma separated list of values.
+ --puppet-classes PUPPET_CLASS_NAMES                   Comma separated list of values.
+ --puppet-proxy PUPPET_PROXY_NAME                      Name of puppet proxy
+ --puppet-proxy-id PUPPET_PROXY_ID                      
+ --realm REALM_NAME                                    Name to search by
+ --realm-id REALM_ID                                   Numerical ID or realm name
+ --subnet SUBNET_NAME                                  Subnet name
+ --subnet-id SUBNET_ID                                  
+ -h, --help                                            print help
 
 ```
 
