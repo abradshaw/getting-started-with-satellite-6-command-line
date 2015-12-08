@@ -1,101 +1,24 @@
 # Host Creation
 
->**Note:** Currently there is no way of creating a new host from hammer, which is dissapointing. I have opened this [bug](https://bugzilla.redhat.com/show_bug.cgi?id=1153034)
+Just as for the previous section, this page is now dramatically simpler, the workarounds have been removed, as in Satellite 6.1, they are no longer needed
 
->As with **host group** creation, I will add a couple of work arounds (one uses the API and one uses the web UI) until the bug is fixed. Sorry
-
-The below solution is taken directly from the  [sister book](http://gsw-satellite6.documentation.rocks/)
+As also mentioned in the previous section, setting of the root password at the **host-group** level is not possible, so we will set it here at the host creation stage
 
 
-----
-#### Work Around 1
-
-This is another work around sent to me by Rodrique Heron. Its a little bigger than the previous one but here goes
-
-##### Create Host
-
-Creating a host from the CLI with hammer requires the following options:
-
- * --environment-id
- * --architecture-id
- * --domain-id
- * --puppet-proxy-id
- * --operatingsystem-id
- * --partition-table-id
-
-
-These options can be satisfied via a hostgroup, which will be assumed already exist for this exercise.
-
-
-##### Define the organization, location and capsule name and id for the host.
+All we really need now, for bare metal provisioning (physical or virtual without compute resources configured) is a **mac-address**
 
 ```
-export ORG_NAME=MyOrg
-export ORG_LOCATION=MyLocation
-export ORG_ID=$(hammer --csv organization list --search "${ORG_NAME}"| awk -F, 'FNR == 2 {print $1}')
-export LOCATION_ID=$(hammer --csv location list --search "${ORG_LOCATION}" | awk -F, 'FNR == 2 {print $1}')
+hammer host create --hostgroup "DC North" --name="satellite-provision-test" \ 
+ --mac "00:1a:4a:16:01:7a" --root-password "redhat00" \ 
+ --organization "${ORG}" --location "${LOC}"
 ```
 
-##### Define the Hostgroup name and ID
-
-```
-export HOSTGROUP_NAME='rhel-6-x86_64-soe'
-export HOSTGROUP_ID=$(hammer --csv hostgroup list --search "name = \"${HOSTGROUP_NAME}\""| awk -F, 'NR==2 {print $1}')
-```
-
-##### Create Host
-
-```
-export DOMAIN_NAME='example.com'
-export HOST_SHORTNAME="test-103"
-export HOST_FQDN="${HOST_SHORTNAME}.${DOMAIN_NAME}"
-export HOST_MAC='52:55:00:54:0b:e1'
-export ROOT_PWD='12345678FOOD'
-
-hammer host create --ask-root-password false --build false --hostgroup-id ${HOSTGROUP_ID} --mac ${HOST_MAC} --name "${HOST_SHORTNAME}" --root-password ${ROOT_PWD}
-```
-
-##### Associate the host to an organization and location
-
-The functionality is not available with the hammer cli, we will leverage the API instead.
-
-```
-export HOST_ID=$(hammer host list | grep "${HOST_SHORTNAME}" | awk '{print $1}')
-
-json_file=$(mktemp)
-cat > ${json_file} <<EOF
-{"organization_id":"$ORG_ID","location_id":"$LOCATION_ID"}
-EOF
-
-curl -X PUT -k -u admin:securepassword -H 'Content-Type: application/json' -d @${json_file} https://localhost/api/hosts/${HOST_ID}
-```
-
-Full documentation of this above work-around is located [here](https://gist.github.com/swygue/854e4b6686ed2bbb2b49)
-
-----
-#### Work Around 2
-
-From the web UI, go to
-
-```Hosts > New Host```
-
-Enter the hostname (without the domain name) of your new host. The **Organisation** and **Location** fields should be correct already. Select the **Host Group** from the dropdown, most other entries will now auto populate, with the exception of **Content Source**. Select the **Content Source**
-
-![](../images/host-newhost-1.png)
-
-Now over on the **Network** tab, check that the **Domain** is correct (leave **Realm** empty) and paste in the MAC address of the host you are provisioning. (check that IP is auto suggetsed - if not see troubleshooting section)
-
-Verify that, on the Operating System Tab, that **Architecture**, **Operating system**, **Media** and **Partition table** are set and hit **Submit**
-
-After a few seconds a screen like this should appear
-
-![](../images/host-newhost-2.png)
 
 Now power on the host to be provisioned.
 
-The build should progress in these distint stages
+The build should progress in these distinct stages
 
-The initial Amaconda package install stage
+The initial Anaconda package install stage
 
 ![](../images/host-stage-anaconda.png)
 
@@ -126,11 +49,11 @@ Back on the Satellite Server, under ```Hosts > All Hosts```
 
 ![](../images/hosts-allhosts.png)
 
-Also on the Satellite Server, check the status of the **Content Hosts** ```Hosts > Content Hosts```
+Also on the Satellite Server, check the status of the **Content Hosts** ```Hosts > Content Hosts```  
 
 ![](../images/hosts-contenthost-1.png)
 
-Click on the **Content Host** to see more details
+Click on the **Content Host** to see more details (*the screenshots abave and below need updating*)
 
 ![](../images/hosts-contenthost-2.png)
 
