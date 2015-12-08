@@ -1,10 +1,8 @@
 # Getting Started with Satellite 6 Command Line
 >**NOTE**:
-This book is UNFINISHED - I was waiting for a bug with hostgroup creation to be fixed, but then I found that also host creation doesnt work via hammer either.
+This book has now been updated to Satellite 6.1
 
->Ive decided to release the book anyway, I still think it has useful infromation in it
-
->I shall update the book, once the final bugs are resolved
+>The previous version of the book had a number of work arounds included that are now, no longer necessary
 
 ----
 In this, the second book in the series, we look at using Satellite 6's command line tool, called Hammer
