@@ -46,7 +46,7 @@ hammer repository-set enable  --organization "${ORG}" \
 
 hammer repository-set enable  --organization "${ORG}"  \
  --product "Red Hat Enterprise Linux Server"  \
- --name "Red Hat Satellite Tools 6.1 (for RHEL 7 Server) (RPMs)" \
+ --name "Red Hat Satellite Tools 6.2 (for RHEL 7 Server) (RPMs)" \
  --basearch "x86_64"
 
 hammer repository-set enable  --organization "${ORG}" \
