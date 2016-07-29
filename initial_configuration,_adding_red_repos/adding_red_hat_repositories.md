@@ -37,7 +37,7 @@ To get us started we shall only enable three Red Hat repositories - these are en
 hammer repository-set enable  --organization "${ORG}" \
  --product "Red Hat Enterprise Linux Server" \
  --name "Red Hat Enterprise Linux 7 Server (Kickstart)" \
- --releasever "7.1" --basearch "x86_64"
+ --releasever "7.2" --basearch "x86_64"
 
 hammer repository-set enable  --organization "${ORG}" \
  --product "Red Hat Enterprise Linux Server" \
