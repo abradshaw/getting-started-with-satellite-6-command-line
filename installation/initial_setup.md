@@ -5,7 +5,15 @@ The **katello-installer** is used to perform the initial setup and any future ch
 We will create an "all-in-one" deployment, meaning that the Satellite will have the additional roles of TFTP proxy, DHCP server and DNS server added at install time.
 
 ```
-satellite-installer --scenario satellite \
+# provided you put your CA cert and the signed cert of the Satellite there
+# otgerwise skip this and drop the cert options when installing
+cd /root/SSL-cert
+katello-certs-check \\
+  -c 2016-06-17.crt \\
+  -r 2016-06-17.csr \\
+  -k 2016-06-17_unencrypted.key \\
+  -b pcfe-CA-pem.crt
+
 cd /root/SSL-cert # provided you put your CA cert and the signed cert of rthe Satellite there
 satellite-installer --scenario satellite \\
   --foreman-initial-organization "Sat Test" \\
