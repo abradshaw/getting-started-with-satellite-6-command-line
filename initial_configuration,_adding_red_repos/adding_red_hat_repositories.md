@@ -27,6 +27,11 @@ To get us started we shall only enable three Red Hat repositories - these are en
  --name "Red Hat Enterprise Linux 6 Server (RPMs)" \
  --releasever "6.5" --basearch "x86_64"
 
+hammer repository-set enable  --organization "${ORG}"  \
+ --product "Red Hat Enterprise Linux Server"  \
+ --name "Red Hat Satellite Tools 6.2 (for RHEL 6 Server) (RPMs)" \
+ --basearch "x86_64"
+
 # hammer repository-set enable  --organization "${ORG}" \
  --product "Red Hat Enterprise Linux Server" \
  --name "Red Hat Enterprise Linux 6 Server - RH Common (RPMs)" \
