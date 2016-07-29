@@ -48,10 +48,16 @@ Of course this is not what we require, so lets add in all the ports we require i
 
 
 ```
-# CHECKME
-# firewall-cmd  --permanent --zone=public  \
+firewall-cmd  --permanent --zone=public  \
  --add-service=RH-Satellite-6 --add-service=dhcp \
  --add-service=dns --add-service=tftp
+# 6.2 still seems to needs also 8000 TCP for foreman-proxy
+# https://bugzilla.redhat.com/show_bug.cgi?id=1248665
+# [root@satellite ~]# lsof -i :8000
+# COMMAND  PID          USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+# ruby    2740 foreman-proxy   10u  IPv4  22409      0t0  TCP *:irdmi (LISTEN)
+
+firewall-cmd --zone=public --add-port="8000/tcp" --permanent
 ```
 
 Now run that command again.
