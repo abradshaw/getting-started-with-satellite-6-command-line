@@ -12,24 +12,6 @@ Before we start, you need
 
 Its worth getting the firewall configured at this stage, so that we dont forget later. I shall assume a default firewall config exists. Configure the firewall any way you feel confortable, there is a quick option below.
 
-### RHEL 6 Firewall
-```
-iptables -F
-iptables -I INPUT -m state --state NEW -p tcp --dport 443 -j ACCEPT
-iptables -I INPUT -m state --state NEW -p tcp --dport 5671 -j ACCEPT
-iptables -I INPUT -m state --state NEW -p tcp --dport 80 -j ACCEPT
-iptables -I INPUT -m state --state NEW -p tcp --dport 8140 -j ACCEPT
-iptables -I INPUT -m state --state NEW -p tcp --dport 9090 -j ACCEPT
-iptables -I INPUT -m state --state NEW -p tcp --dport 22 -j ACCEPT
-# And for the Capsule services
-iptables -I INPUT -m state --state NEW -p tcp --dport 53 -j ACCEPT
-iptables -I INPUT -m state --state NEW -p udp --dport 53 -j ACCEPT
-iptables -I INPUT -m state --state NEW -p udp --dport 67 -j ACCEPT
-iptables -I INPUT -m state --state NEW -p udp --dport 68 -j ACCEPT
-iptables -I INPUT -m state --state NEW -p udp --dport 69 -j ACCEPT
-service iptables save
-```
-
 ### RHEL 7 Firewall
 RHEL 7 uses firewalld, which is new to all of us. Below are some simple steps to get the firewall setup as we need it
 
@@ -66,6 +48,7 @@ Of course this is not what we require, so lets add in all the ports we require i
 
 
 ```
+# CHECKME
 # firewall-cmd  --permanent --zone=public  \
  --add-service=RH-Satellite-6 --add-service=dhcp \
  --add-service=dns --add-service=tftp
