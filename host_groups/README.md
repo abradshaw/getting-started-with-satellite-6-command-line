@@ -2,7 +2,7 @@
 
 Rather than applying multiple settings to an individual host, Satellite 6 uses hostgroups.
 
-Multiple **HostGroups** can be added and they can also be nested in a hierachal manner.
+Multiple **HostGroups** can be added and they can also be nested in a hierarchical manner.
 
 Examples
 ```
