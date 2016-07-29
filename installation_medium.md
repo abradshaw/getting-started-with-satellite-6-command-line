@@ -66,7 +66,7 @@ ID | NAME                                                              | PRODUCT
 11 | Red Hat Enterprise Linux 7 Server Kickstart x86_64 7.2            | Red Hat Enterprise Linux Server | yum          | https://cdn.redhat.com/content/dist/rhel/server/7/7.2/x86_64/kickstart          
 4  | Red Hat Enterprise Linux 7 Server - RH Common RPMs x86_64 7Server | Red Hat Enterprise Linux Server | yum          | https://cdn.redhat.com/content/dist/rhel/server/7/7Server/x86_64/rh-common/os   
 2  | Red Hat Enterprise Linux 7 Server RPMs x86_64 7Server             | Red Hat Enterprise Linux Server | yum          | https://cdn.redhat.com/content/dist/rhel/server/7/7Server/x86_64/os             
-3  | Red Hat Satellite Tools 6.1 for RHEL 7 Server RPMs x86_64         | Red Hat Enterprise Linux Server | yum          | https://cdn.redhat.com/content/dist/rhel/server/7/7Server/x86_64/sat-tools/6....
+3  | Red Hat Satellite Tools 6.2 for RHEL 7 Server RPMs x86_64         | Red Hat Enterprise Linux Server | yum          | https://cdn.redhat.com/content/dist/rhel/server/7/7Server/x86_64/sat-tools/6....
 ---|-------------------------------------------------------------------|---------------------------------|--------------|---------------------------------------------------------------------------------
 
 hammer repository synchronize --id 11 --organization "${ORG}"

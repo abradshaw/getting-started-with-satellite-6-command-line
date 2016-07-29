@@ -52,7 +52,7 @@ You will then be able to attach to that pool. However, depending on your entitle
 
 
 
-This may enable too many repositories. The [Satellite documentation](https://access.redhat.com/documentation/en-US/Red_Hat_Satellite/6.0/html-single/Installation_Guide/index.html#Installing_Red_Hat_Satellite) makes clear which repositories you will need, and shows how to disable the ones you dont.
+This may enable too many repositories. The [Satellite documentation](https://access.redhat.com/documentation/en/red-hat-satellite/6.2/paged/installation-guide/) makes clear which repositories you will need, and shows how to disable the ones you dont.
 
 ```
 
@@ -62,8 +62,14 @@ This may enable too many repositories. The [Satellite documentation](https://acc
 subscription-manager repos --disable "*"
 
 subscription-manager repos --enable rhel-7-server-rpms \
+<<<<<<< HEAD
 --enable rhel-server-rhscl-7-rpms \
 --enable rhel-7-server-satellite-6.2-rpms
+=======
+                           --enable rhel-server-rhscl-7-rpms \
+                           --enable rhel-7-server-satellite-6.2-rpms
+
+>>>>>>> caf346f... remove RHEL6 refs, RHEL7 comes with free XFS and we definitely want that for /var/lib/pulp
 ```
 
 Once done, check that you have access to **exactly** three repos
@@ -78,8 +84,6 @@ rhel-7-server-rpms/7Server/x86_64       Red Hat Enterprise Linux 7 Server (RPMs)
 rhel-7-server-satellite-6.2-rpms/x86_64 Red Hat Satellite 6.2 (for RHEL 7 Server) (RPMs)
 rhel-server-rhscl-7-rpms/7Server/x86_64 Red Hat Software Collections RPMs for Red Hat Enterprise Linux 7 Server
 ```
-
-
 
 Once you have confirmed that you have access to exactly those three repositories, carry on to the next part.
 

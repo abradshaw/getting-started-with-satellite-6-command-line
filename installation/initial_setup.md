@@ -4,6 +4,10 @@ The **katello-installer** is used to perform the initial setup and any future ch
 
 We will create an "all-in-one" deployment, meaning that the Satellite will have the additional roles of TFTP proxy, DHCP server and DNS server added at install time.
 
+The Satellite has 2 network interfaces and does not forward packets between them (to simulate a corporate firewall).
+* the network "default" is the outside link (to sync repos)
+* the network "SatTesting" is where DNS, DHCP and PXE are handled by the Satellite
+
 ```
 # provided you put your CA cert and the signed cert of the Satellite there
 # otgerwise skip this and drop the cert options when installing
