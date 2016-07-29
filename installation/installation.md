@@ -6,7 +6,7 @@ Now we have the correct repos configured, update the server with the latest upda
 
 Next we perform the actual instalation.
 
-`yum install katello`
+`yum install satellite`
 
 
 

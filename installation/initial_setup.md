@@ -4,12 +4,40 @@ The **katello-installer** is used to perform the initial setup and any future ch
 
 We will create an "all-in-one" deployment, meaning that the Satellite will have the additional roles of TFTP proxy, DHCP server and DNS server added at install time.
 
+The Satellite has 2 network interfaces and does not forward packets between them (to simulate a corporate firewall).
+* the network "default" is the outside link (to sync repos)
+* the network "SatTesting" is where DNS, DHCP and PXE are handled by the Satellite
+
 ```
-katello-installer  --capsule-dns true --capsule-dns-forwarders \
-8.8.8.8 --capsule-dns-interface eth0 --capsule-dns-zone \
-example.com --capsule-dns-reverse 30.16.172.in-addr.arpa \
---capsule-dhcp true --capsule-dhcp-interface eth0 \
---capsule-dhcp-gateway 172.16.30.1 --capsule-tftp true
+# provided you put your CA cert and the signed cert of the Satellite there
+# otgerwise skip this and drop the cert options when installing
+cd /root/SSL-cert
+katello-certs-check \\
+  -c 2016-06-17.crt \\
+  -r 2016-06-17.csr \\
+  -k 2016-06-17_unencrypted.key \\
+  -b pcfe-CA-pem.crt
+
+cd /root/SSL-cert # provided you put your CA cert and the signed cert of rthe Satellite there
+satellite-installer --scenario satellite \\
+  --foreman-initial-organization "Sat Test" \\
+  --foreman-initial-location "Engineering Building" \\
+  --foreman-proxy-dns true \\
+  --foreman-proxy-dns-forwarders 8.8.8.8 \\
+  --foreman-proxy-dns-zone sattest.example.com \\
+  --foreman-proxy-dns-reverse 2.168.192.in-addr.arpa \\
+  --foreman-proxy-dhcp true \\
+  --foreman-proxy-dhcp-interface eth0 \\
+  --foreman-proxy-dhcp-range  "192.168.2.100 192.168.2.150" \\
+  --foreman-proxy-dhcp-gateway 192.168.2.2 \\
+  --foreman-proxy-dhcp-nameservers 192.168.2.2 \\
+  --foreman-proxy-tftp true \\
+  --foreman-proxy-tftp-servername $(hostname) \\
+  --capsule-puppet true \\
+  --certs-server-cert \$(pwd)/2016-06-17.crt \\
+  --certs-server-cert-req \$(pwd)/2016-06-17.csr \\
+  --certs-server-key \$(pwd)/2016-06-17_unencrypted.key \\
+  --certs-server-ca-cert \$(pwd)/pcfe-CA-pem.crt
 ```
 
 >**Note**: forwarders are stored in ```/etc/named/options.conf``` should you wish to change them later.

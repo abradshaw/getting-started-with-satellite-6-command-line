@@ -1,6 +1,6 @@
 # Getting Started with Satellite 6 Command Line
 >**NOTE**:
-This book has now been updated to Satellite 6.1
+This book has now been updated to Satellite 6.2
 
 >The previous version of the book had a number of work arounds included that are now, no longer necessary
 
