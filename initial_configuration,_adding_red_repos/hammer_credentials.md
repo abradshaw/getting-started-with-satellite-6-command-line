@@ -4,7 +4,7 @@ To run hammer you need to provide authentication, you can specify your username 
 
 ```hammer -u admin -p <password> <subcommands>```
 
-or simple edit **/etc/hammer/cli.modules.d/foreman.yml**
+or simply create **~/.hammer/cli_config.yml**
 
 ```
 :foreman:
