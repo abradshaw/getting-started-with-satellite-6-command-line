@@ -13,16 +13,16 @@ CV1="cv-rhel7-base"
 
 ```
 hammer repository list --organization "${ORG}"
-
-hammer repository list --organization "${ORG}"
----|-------------------------------------------------------------------|---------------------------------|--------------|---------------------------------------------------------------------------------
-ID | NAME                                                              | PRODUCT                         | CONTENT TYPE | URL                                                                             
----|-------------------------------------------------------------------|---------------------------------|--------------|---------------------------------------------------------------------------------
-1  | Red Hat Enterprise Linux 7 Server Kickstart x86_64 7.1            | Red Hat Enterprise Linux Server | yum          | https://cdn.redhat.com/content/dist/rhel/server/7/7.1/x86_64/kickstart          
-4  | Red Hat Enterprise Linux 7 Server - RH Common RPMs x86_64 7Server | Red Hat Enterprise Linux Server | yum          | https://cdn.redhat.com/content/dist/rhel/server/7/7Server/x86_64/rh-common/os   
-2  | Red Hat Enterprise Linux 7 Server RPMs x86_64 7Server             | Red Hat Enterprise Linux Server | yum          | https://cdn.redhat.com/content/dist/rhel/server/7/7Server/x86_64/os             
-3  | Red Hat Satellite Tools 6.1 for RHEL 7 Server RPMs x86_64         | Red Hat Enterprise Linux Server | yum          | https://cdn.redhat.com/content/dist/rhel/server/7/7Server/x86_64/sat-tools/6....
----|-------------------------------------------------------------------|---------------------------------|--------------|---------------------------------------------------------------------------------
+---|-----------------------------------------------------------|---------------------------------|--------------|---------------------------------------------------------------------------------
+ID | NAME                                                      | PRODUCT                         | CONTENT TYPE | URL
+---|-----------------------------------------------------------|---------------------------------|--------------|---------------------------------------------------------------------------------
+3  | Red Hat Satellite Tools 6.2 for RHEL 7 Server RPMs x86_64 | Red Hat Enterprise Linux Server | yum          | https://cdn.redhat.com/content/dist/rhel/server/7/7Server/x86_64/sat-tools/6....
+6  | Red Hat Satellite Tools 6.2 for RHEL 6 Server RPMs x86_64 | Red Hat Enterprise Linux Server | yum          | https://cdn.redhat.com/content/dist/rhel/server/6/6Server/x86_64/sat-tools/6....
+2  | Red Hat Enterprise Linux 7 Server RPMs x86_64 7Server     | Red Hat Enterprise Linux Server | yum          | https://cdn.redhat.com/content/dist/rhel/server/7/7Server/x86_64/os
+1  | Red Hat Enterprise Linux 7 Server Kickstart x86_64 7.2    | Red Hat Enterprise Linux Server | yum          | https://cdn.redhat.com/content/dist/rhel/server/7/7.2/x86_64/kickstart
+5  | Red Hat Enterprise Linux 6 Server RPMs x86_64 6.5         | Red Hat Enterprise Linux Server | yum          | https://cdn.redhat.com/content/dist/rhel/server/6/6.5/x86_64/os
+4  | Red Hat Enterprise Linux 6 Server Kickstart x86_64 6.5    | Red Hat Enterprise Linux Server | yum          | https://cdn.redhat.com/content/dist/rhel/server/6/6.5/x86_64/kickstart
+---|-----------------------------------------------------------|---------------------------------|--------------|---------------------------------------------------------------------------------
 
 ```
 We dont need the kickstart repo once the anaconda has provisioned the machine, so we will exclude that and incluse the others
@@ -39,7 +39,7 @@ hammer content-view create --name "${CV1}" \
 Next we add the repositories to the **content view**
 
 ```
-hammer content-view update --repository-ids 4,2,3 \
+hammer content-view update --repository-ids 3,2 \
  --name "${CV1}" --organization "${ORG}"
 ```
 
