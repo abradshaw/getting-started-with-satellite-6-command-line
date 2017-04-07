@@ -55,29 +55,20 @@ You will then be able to attach to that pool. However, depending on your entitle
 This may enable too many repositories. The [Satellite documentation](https://access.redhat.com/documentation/en/red-hat-satellite/6.2/paged/installation-guide/) makes clear which repositories you will need, and shows how to disable the ones you dont.
 
 ```
-
 ### RHEL 7 Repos
 
 ```
 subscription-manager repos --disable "*"
 
 subscription-manager repos --enable rhel-7-server-rpms \
-<<<<<<< HEAD
 --enable rhel-server-rhscl-7-rpms \
 --enable rhel-7-server-satellite-6.2-rpms
-=======
-                           --enable rhel-server-rhscl-7-rpms \
-                           --enable rhel-7-server-satellite-6.2-rpms
-
->>>>>>> caf346f... remove RHEL6 refs, RHEL7 comes with free XFS and we definitely want that for /var/lib/pulp
 ```
 
 Once done, check that you have access to **exactly** three repos
 
 ```
-
 # yum repolist
-...
 
 repo id                                 repo name
 rhel-7-server-rpms/7Server/x86_64       Red Hat Enterprise Linux 7 Server (RPMs)
