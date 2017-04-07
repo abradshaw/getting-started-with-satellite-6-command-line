@@ -54,7 +54,7 @@ You will then be able to attach to that pool. However, depending on your entitle
 
 This may enable too many repositories. The [Satellite documentation](https://access.redhat.com/documentation/en/red-hat-satellite/6.2/paged/installation-guide/) makes clear which repositories you will need, and shows how to disable the ones you dont.
 
-```
+
 ### RHEL 7 Repos
 
 ```
