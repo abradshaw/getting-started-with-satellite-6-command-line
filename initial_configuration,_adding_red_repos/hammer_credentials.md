@@ -2,16 +2,16 @@
 
 To run hammer you need to provide authentication, you can specify your username and password each time
 
-```hammer -u admin -p <password> <subcommands>```
+`hammer -u admin -p <password> <subcommands>`
 
-or simply create **~/.hammer/cli_config.yml**
+or simply create **~/.hammer/cli\_config.yml**
 
 ```
 :foreman:
-	:enable_module: true
-	:host: 'https://localhost/'
-	:username: 'admin'
-	:password: '<password>'
+    :enable_module: true
+    :host: 'https://satellite.example.com/'
+    :username: 'admin'
+    :password: '<password>'
 ```
 
 Personally I find the second option much more convenient,ne so I shall assume you have done this for all further examples
@@ -25,5 +25,6 @@ awk '/^ *admin_password:/ { print $2 }' \
 /etc/katello-installer/answers.katello-installer.yaml
 ```
 
-Once you have edited this file, it might be worth ```chmod 600```
+Once you have edited this file, it might be worth `chmod 600`  
  the config file and stripping the password from the answers file just to safe
+
