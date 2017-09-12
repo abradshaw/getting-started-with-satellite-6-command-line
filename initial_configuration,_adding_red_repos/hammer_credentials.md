@@ -22,7 +22,7 @@ Just incase you didnt make a note of it, it can be recovered by running
 
 ```
 awk '/^ *admin_password:/ { print $2 }' \
-/etc/katello-installer/answers.katello-installer.yaml
+/etc/foreman-installer/scenarios.d/satellite-answers.yaml
 ```
 
 Once you have edited this file, it might be worth `chmod 600`  
